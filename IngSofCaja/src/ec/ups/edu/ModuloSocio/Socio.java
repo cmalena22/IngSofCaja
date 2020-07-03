@@ -25,10 +25,13 @@ public class Socio implements Serializable {
 	private double salario;
 	private String perfil;
 	private String trabajo;
+	
 	@OneToOne(cascade = CascadeType.ALL, mappedBy = "socio")
 	private EstadoCuenta estadoCuenta;
+	
 	@OneToOne
-	private CuentaAhorro socio;
+	@JoinColumn
+	private CuentaAhorro cuentaAhorro;
 	
 	public Socio() {
 		super();
@@ -106,12 +109,13 @@ public class Socio implements Serializable {
 		this.estadoCuenta = estadoCuenta;
 	}
 
-	public CuentaAhorro getSocio() {
-		return socio;
+	
+	public CuentaAhorro getCuentaAhorro() {
+		return cuentaAhorro;
 	}
 
-	public void setSocio(CuentaAhorro socio) {
-		this.socio = socio;
+	public void setCuentaAhorro(CuentaAhorro cuentaAhorro) {
+		this.cuentaAhorro = cuentaAhorro;
 	}
 
 	@Override
@@ -140,7 +144,9 @@ public class Socio implements Serializable {
 	public String toString() {
 		return "Socio [id=" + id + ", nombre=" + nombre + ", apellido=" + apellido + ", telefono=" + telefono
 				+ ", cedula=" + cedula + ", salario=" + salario + ", perfil=" + perfil + ", trabajo=" + trabajo
-				+ ", estadoCuenta=" + estadoCuenta + ", socio=" + socio + "]";
+				+ ", estadoCuenta=" + estadoCuenta + ", cuentaAhorro=" + cuentaAhorro + "]";
 	}
+
+	
    
 }

@@ -22,6 +22,7 @@ public class TablaAmortizacion implements Serializable {
 	private double tasaInteres;
 	private double pagoMensual;
 	@OneToOne
+	@JoinColumn
 	private Credito tabla;
 	public TablaAmortizacion() {
 	

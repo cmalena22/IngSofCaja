@@ -23,15 +23,27 @@ public class Credito implements Serializable {
 	private String nombreRecomienda;
 	private String cedulaRecomienda;
 	private String bancoRecomendado;
-	@OneToOne(cascade = CascadeType.ALL, mappedBy = "cuenta")
-	private CuentaAhorro cuentaahorro;
-	@OneToOne(cascade = CascadeType.ALL, mappedBy = "tabla")
-	private TablaAmortizacion tablaamort;
 	private String motivo;
+	
+	@OneToOne
+	@JoinColumn
+	private CuentaAhorro credito;	
+	
+	
+	
+	@OneToOne(cascade = CascadeType.ALL, mappedBy = "tabla")
+	private TablaAmortizacion tablaAmortizacion;
+	
+	
+	
 	@OneToMany(cascade = CascadeType.ALL, mappedBy = "cuota")
 	private List<Cuota>listaCuota;
+	
 	@ManyToOne
-	private CarteraCredito credito;
+	@JoinColumn
+	private CarteraCredito creditoCartera;
+	
+	
 	private boolean aceptado=true;
 	public Credito() {
 		
@@ -59,18 +71,7 @@ public class Credito implements Serializable {
 	}
 	public void setBancoRecomendado(String bancoRecomendado) {
 		this.bancoRecomendado = bancoRecomendado;
-	}
-	public CuentaAhorro getCuentaahorro() {
-		return cuentaahorro;
-	}
-	public void setCuentaahorro(CuentaAhorro cuentaahorro) {
-		this.cuentaahorro = cuentaahorro;
-	}
-	public TablaAmortizacion getTablaamort() {
-		return tablaamort;
-	}
-	public void setTablaamort(TablaAmortizacion tablaamort) {
-		this.tablaamort = tablaamort;
+	
 	}
 	public String getMotivo() {
 		return motivo;
@@ -110,11 +111,31 @@ public class Credito implements Serializable {
 			return false;
 		return true;
 	}
+	public CuentaAhorro getCredito() {
+		return credito;
+	}
+	public void setCredito(CuentaAhorro credito) {
+		this.credito = credito;
+	}
+	public TablaAmortizacion getTablaAmortizacion() {
+		return tablaAmortizacion;
+	}
+	public void setTablaAmortizacion(TablaAmortizacion tablaAmortizacion) {
+		this.tablaAmortizacion = tablaAmortizacion;
+	}
+
+	public CarteraCredito getCreditoCartera() {
+		return creditoCartera;
+	}
+	public void setCreditoCartera(CarteraCredito creditoCartera) {
+		this.creditoCartera = creditoCartera;
+	}
 	@Override
 	public String toString() {
 		return "Credito [id=" + id + ", nombreRecomienda=" + nombreRecomienda + ", cedulaRecomienda=" + cedulaRecomienda
-				+ ", bancoRecomendado=" + bancoRecomendado + ", cuentaahorro=" + cuentaahorro + ", tablaamort="
-				+ tablaamort + ", motivo=" + motivo + ", listaCuota=" + listaCuota + ", aceptado=" + aceptado + "]";
+				+ ", bancoRecomendado=" + bancoRecomendado + ", motivo=" + motivo + ", credito=" + credito
+				+ ", tablaAmortizacion=" + tablaAmortizacion + ", listaCuota=" + listaCuota + ", creditoCartera="
+				+ creditoCartera + ", aceptado=" + aceptado + "]";
 	}
-   
+
 }

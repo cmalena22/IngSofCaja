@@ -20,6 +20,7 @@ public class Cuota implements Serializable {
 	private String monto;
 	private int numcuota;
 	@ManyToOne
+	@JoinColumn
 	private Credito cuota;
 	public Cuota() {
 		super();

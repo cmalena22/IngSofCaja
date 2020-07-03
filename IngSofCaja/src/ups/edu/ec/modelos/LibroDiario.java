@@ -19,15 +19,84 @@ public class LibroDiario implements Serializable {
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private int id;
 	private String fecha;
-	@OneToMany(cascade = CascadeType.ALL,mappedBy = "carteraCredito")
-	private List<CarteraCredito> listCarteraCredito;
-	@OneToMany(cascade = CascadeType.ALL,mappedBy = "historial")
-	private List<HistorialAhorro> listHistorialCredito;
-	@OneToOne(cascade = CascadeType.ALL,mappedBy = "caja")
+	
+	@OneToOne(cascade = CascadeType.ALL,mappedBy = "carteraCredito")
+	private CarteraCredito listCarteraCredito;
+	
+	@OneToOne(cascade = CascadeType.ALL,mappedBy = "historialAhorro")
+	private HistorialAhorro listHistorialAhorro;
+	
+	@OneToOne
+	@JoinColumn
 	private Caja caja;
 	private String monto;
 	public LibroDiario() {
-		super();
+	
 	}
-   
+	public int getId() {
+		return id;
+	}
+	public void setId(int id) {
+		this.id = id;
+	}
+	public String getFecha() {
+		return fecha;
+	}
+	public void setFecha(String fecha) {
+		this.fecha = fecha;
+	}
+	
+	public CarteraCredito getListCarteraCredito() {
+		return listCarteraCredito;
+	}
+	public void setListCarteraCredito(CarteraCredito listCarteraCredito) {
+		this.listCarteraCredito = listCarteraCredito;
+	}
+	public HistorialAhorro getListHistorialAhorro() {
+		return listHistorialAhorro;
+	}
+	public void setListHistorialAhorro(HistorialAhorro listHistorialAhorro) {
+		this.listHistorialAhorro = listHistorialAhorro;
+	}
+	public Caja getCaja() {
+		return caja;
+	}
+	public void setCaja(Caja caja) {
+		this.caja = caja;
+	}
+	public String getMonto() {
+		return monto;
+	}
+	public void setMonto(String monto) {
+		this.monto = monto;
+	}
+	
+	
+	
+	@Override
+	public int hashCode() {
+		final int prime = 31;
+		int result = 1;
+		result = prime * result + id;
+		return result;
+	}
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		LibroDiario other = (LibroDiario) obj;
+		if (id != other.id)
+			return false;
+		return true;
+	}
+	@Override
+	public String toString() {
+		return "LibroDiario [id=" + id + ", fecha=" + fecha + ", listCarteraCredito=" + listCarteraCredito
+				+ ", listHistorialAhorro=" + listHistorialAhorro + ", caja=" + caja + ", monto=" + monto + "]";
+	}
+
 }

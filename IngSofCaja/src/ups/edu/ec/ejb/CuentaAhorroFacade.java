@@ -3,8 +3,8 @@ package ups.edu.ec.ejb;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 
-import ups.edu.ec.modelos.Administrador;
-import ups.edu.ec.modelos.CuentaAhorro;
+import ec.ups.edu.ModuloSocio.Administrador;
+import ec.ups.edu.ModuloTrasaccion.CuentaAhorro;
 
 public class CuentaAhorroFacade extends AbstractFacade<CuentaAhorro> {
 

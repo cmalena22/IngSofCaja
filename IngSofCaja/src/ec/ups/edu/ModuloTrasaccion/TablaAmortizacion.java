@@ -1,4 +1,4 @@
-package ups.edu.ec.modelos;
+package ec.ups.edu.ModuloTrasaccion;
 
 import java.io.Serializable;
 import javax.persistence.*;

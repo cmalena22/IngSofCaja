@@ -4,15 +4,20 @@
 	<persistence-unit name="IngSofCaja" transaction-type="JTA">
 	
 		<jta-data-source>jdbc/_ahorro</jta-data-source>
-		<class>ups.edu.ec.modelos.Administrador</class>
-		<class>ups.edu.ec.modelos.Credito</class>
-		<class>ups.edu.ec.modelos.TablaAmortizacion</class>
-		<class>ups.edu.ec.modelos.CuentaAhorro</class>
-		<class>ups.edu.ec.modelos.Cuota</class>
-		<class>ups.edu.ec.modelos.Socio</class>
-		<class>ups.edu.ec.modelos.Transaccion</class>
-		<class>ups.edu.ec.modelos.EstadoCuenta</class>
-		
+		<class>ec.ups.edu.ModuloSocio.Administrador</class>
+		<class>ec.ups.edu.ModuloTrasaccion.Credito</class>
+		<class>ec.ups.edu.ModuloTrasaccion.TablaAmortizacion</class>
+		<class>ec.ups.edu.ModuloTrasaccion.CuentaAhorro</class>
+		<class>ec.ups.edu.ModuloTrasaccion.Cuota</class>
+		<class>ec.ups.edu.ModuloSocio.Socio</class>
+		<class>ec.ups.edu.ModuloTrasaccion.Transaccion</class>
+		<class>ec.ups.edu.ModuloSocio.EstadoCuenta</class>
+		<class>ups.edu.ec.modelos.LibroDiario</class>
+		<class>ups.edu.ec.modelos.CarteraCredito</class>
+		<class>ups.edu.ec.modelos.HistorialAhorro</class>
+		<class>ups.edu.ec.modelos.Caja</class>
+		<class>ups.edu.ec.modelos.Egreso</class>
+		<class>ups.edu.ec.modelos.Ingreso</class>		
 		<properties>
          	<property name="javax.persistence.schema-generation.database.action" value="create"/>
 		</properties>

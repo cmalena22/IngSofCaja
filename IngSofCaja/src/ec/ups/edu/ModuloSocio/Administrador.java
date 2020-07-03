@@ -1,6 +1,9 @@
 package ec.ups.edu.ModuloSocio;
+<<<<<<< HEAD
 
 
+=======
+>>>>>>> branch 'master' of https://github.com/cmalena22/IngSofCaja.git
 
 import java.io.Serializable;
 import javax.persistence.*;

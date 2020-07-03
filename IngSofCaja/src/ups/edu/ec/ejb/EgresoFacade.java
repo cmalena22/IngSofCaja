@@ -3,17 +3,15 @@ package ups.edu.ec.ejb;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 
-import ec.ups.edu.ModuloSocio.Administrador;
-import ec.ups.edu.ModuloTrasaccion.Cuota;
+import ups.edu.ec.modelos.Egreso;
 
-public class CuotaFacade extends AbstractFacade<Cuota> {
-
+public class EgresoFacade extends AbstractFacade<Egreso> {
 	@PersistenceContext(unitName = "IngSofCaja")
 	private EntityManager em;
 	
 
-	public CuotaFacade() {
-		super(Cuota.class);
+	public EgresoFacade() {
+		super(Egreso.class);
 	}
 
 	@Override

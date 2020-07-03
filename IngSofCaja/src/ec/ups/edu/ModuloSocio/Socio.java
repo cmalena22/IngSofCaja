@@ -1,9 +1,19 @@
 package ec.ups.edu.ModuloSocio;
+<<<<<<< HEAD
+
+
+=======
+>>>>>>> branch 'master' of https://github.com/cmalena22/IngSofCaja.git
 
 import java.io.Serializable;
 import javax.persistence.*;
 
+<<<<<<< HEAD
+
+
+=======
 import ec.ups.edu.ModuloTrasaccion.CuentaAhorro;
+>>>>>>> branch 'master' of https://github.com/cmalena22/IngSofCaja.git
 
 /**
  * Entity implementation class for Entity: Socio

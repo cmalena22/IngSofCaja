@@ -4,7 +4,7 @@ import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 
-import ups.edu.ec.modelos.Administrador;
+import ec.ups.edu.ModuloSocio.Administrador;
 
 
 @Stateless

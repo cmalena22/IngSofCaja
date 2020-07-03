@@ -1,9 +1,12 @@
-package ups.edu.ec.modelos;
+package ec.ups.edu.ModuloTrasaccion;
 
 import java.io.Serializable;
 import java.util.List;
 
 import javax.persistence.*;
+
+import ec.ups.edu.ModuloSocio.Socio;
+import ups.edu.ec.modelos.HistorialAhorro;
 
 /**
  * Entity implementation class for Entity: CuentaAhorro
@@ -26,7 +29,9 @@ public class CuentaAhorro implements Serializable {
 	@OneToMany(cascade = CascadeType.ALL,mappedBy = "cuenta")
 	private List<Transaccion>transaccion;
 	@OneToOne
-	private Credito cuenta;
+	private Credito cuenta;	
+	@ManyToOne
+	private HistorialAhorro historialCuentaAhorro;
 	public CuentaAhorro() {
 		
 	}

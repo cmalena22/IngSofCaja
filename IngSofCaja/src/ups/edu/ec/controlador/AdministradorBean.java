@@ -8,9 +8,8 @@ import javax.enterprise.context.SessionScoped;
 import javax.faces.annotation.FacesConfig;
 import javax.inject.Named;
 
-
+import ec.ups.edu.ModuloSocio.Administrador;
 import ups.edu.ec.ejb.AdministradorFacade;
-import ups.edu.ec.modelos.Administrador;
 
 
 @FacesConfig(version = FacesConfig.Version.JSF_2_3)

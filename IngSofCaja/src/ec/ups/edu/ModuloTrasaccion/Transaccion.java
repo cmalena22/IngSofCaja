@@ -1,7 +1,11 @@
-package ups.edu.ec.modelos;
+package ec.ups.edu.ModuloTrasaccion;
 
 import java.io.Serializable;
+import java.util.List;
+
 import javax.persistence.*;
+
+import ups.edu.ec.modelos.Ingreso;
 
 /**
  * Entity implementation class for Entity: Transaccion
@@ -22,7 +26,10 @@ public class Transaccion implements Serializable {
 	private String tipoTransaccion;
 	@ManyToOne
 	private CuentaAhorro cuenta;
+	@ManyToOne
+	private Ingreso listTransaccion;
 	public Transaccion() {
+	
 		super();
 	}
 	public int getId() {

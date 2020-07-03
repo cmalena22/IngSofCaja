@@ -3,8 +3,7 @@ package ups.edu.ec.ejb;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 
-
-import ups.edu.ec.modelos.TablaAmortizacion;
+import ec.ups.edu.ModuloTrasaccion.TablaAmortizacion;
 
 public class TablaAmortizacionFacade extends  AbstractFacade<TablaAmortizacion> {
 

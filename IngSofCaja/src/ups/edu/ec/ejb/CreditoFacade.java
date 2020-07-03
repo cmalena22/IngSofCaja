@@ -3,7 +3,7 @@ package ups.edu.ec.ejb;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 
-import ups.edu.ec.modelos.Credito;
+import ec.ups.edu.ModuloTrasaccion.Credito;
 
 public class CreditoFacade extends AbstractFacade<Credito>{
 

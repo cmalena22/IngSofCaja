@@ -1,9 +1,11 @@
-package ups.edu.ec.modelos;
+package ec.ups.edu.ModuloTrasaccion;
 
 import java.io.Serializable;
 import java.util.List;
 
 import javax.persistence.*;
+
+import ups.edu.ec.modelos.CarteraCredito;
 
 /**
  * Entity implementation class for Entity: Credito
@@ -28,6 +30,8 @@ public class Credito implements Serializable {
 	private String motivo;
 	@OneToMany(cascade = CascadeType.ALL, mappedBy = "cuota")
 	private List<Cuota>listaCuota;
+	@ManyToOne
+	private CarteraCredito credito;
 	private boolean aceptado=true;
 	public Credito() {
 		

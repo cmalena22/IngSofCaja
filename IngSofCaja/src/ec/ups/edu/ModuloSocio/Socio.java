@@ -1,7 +1,12 @@
-package ups.edu.ec.modelos;
+package ec.ups.edu.ModuloSocio;
+
+
 
 import java.io.Serializable;
 import javax.persistence.*;
+
+
+
 
 /**
  * Entity implementation class for Entity: Socio

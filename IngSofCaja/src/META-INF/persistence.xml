@@ -5,6 +5,13 @@
 	
 		<jta-data-source>jdbc/_ahorro</jta-data-source>
 		<class>ups.edu.ec.modelos.Administrador</class>
+		<class>ups.edu.ec.modelos.Credito</class>
+		<class>ups.edu.ec.modelos.TablaAmortizacion</class>
+		<class>ups.edu.ec.modelos.CuentaAhorro</class>
+		<class>ups.edu.ec.modelos.Cuota</class>
+		<class>ups.edu.ec.modelos.Socio</class>
+		<class>ups.edu.ec.modelos.Transaccion</class>
+		<class>ups.edu.ec.modelos.EstadoCuenta</class>
 		
 		<properties>
          	<property name="javax.persistence.schema-generation.database.action" value="create"/>

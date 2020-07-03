@@ -7,15 +7,11 @@ import javax.persistence.PersistenceContext;
 import ups.edu.ec.modelos.Administrador;
 
 
-
-
-
-
 @Stateless
 public class AdministradorFacade extends AbstractFacade<Administrador>{
 
 
-	@PersistenceContext(unitName = "SoftwareCajadeAhorro")
+	@PersistenceContext(unitName = "IngSofCaja")
 	private EntityManager em;
 	
 
@@ -28,4 +24,17 @@ public class AdministradorFacade extends AbstractFacade<Administrador>{
 		// TODO Auto-generated method stub
 		return em;
 	}
+	
+	public Administrador inicio(String username, String password) {
+		
+    	Administrador ad=new Administrador();
+   	 String query = "SELECT e " +
+   		      "FROM Administrador e " +
+   		      "WHERE e.correo = '" + username +
+   		      "' AND " +
+   		      " e.contrasena = '" + password + "'";
+      	ad =em.createQuery(query, Administrador.class).getSingleResult();
+   		      return ad;
+   }
 }
+

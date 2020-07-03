@@ -1,9 +1,5 @@
 package ec.ups.edu.ModuloSocio;
-<<<<<<< HEAD
 
-
-=======
->>>>>>> branch 'master' of https://github.com/cmalena22/IngSofCaja.git
 
 import java.io.Serializable;
 import javax.persistence.*;
@@ -11,7 +7,7 @@ import javax.persistence.*;
 /**
  * Entity implementation class for Entity: Administrador
  *
- */z
+ */
 @Entity
 
 public class Administrador implements Serializable {

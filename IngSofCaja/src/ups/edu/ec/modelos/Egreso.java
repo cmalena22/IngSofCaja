@@ -26,6 +26,20 @@ public class Egreso implements Serializable {
 	public Egreso() {
 	
 	}
+	
+	
+	
+	public Egreso(int montoIniciail, String fecha, double interesAhorros, double interesOtraInstitucio, Caja egreso) {
+		super();
+		this.montoIniciail = montoIniciail;
+		this.fecha = fecha;
+		this.interesAhorros = interesAhorros;
+		InteresOtraInstitucio = interesOtraInstitucio;
+		this.egreso = egreso;
+	}
+
+
+
 	public int getId() {
 		return id;
 	}

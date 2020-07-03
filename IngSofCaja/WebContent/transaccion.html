@@ -8,21 +8,50 @@
 <link rel="stylesheet" href="css/estilosIndex.css"></link>
 </head>
 <body>
-	<header>
-        <h1>Bienvenidos a Distribuidora UPS.</h1>
-        <h:form>
-        <nav>
-        	<h:link value="CATEGORIAS" outcome="ListarProductosJSF.xhtml">
-				<f:param name="Categorias" value="enlace" />
-			</h:link>
-			<h:link value="BODEGAS" outcome="ListarProductosJSF.xhtml">
-				<f:param name="Bodegas" value="enlace" />
-			</h:link>
-			<h:link value="INICIAR SESION" outcome="Login.xhtml">
-				<f:param name="Sesion" value="enlace" />
-			</h:link>
-        </nav>
-        </h:form>
-    </header>
+<h:form>
+		<h:dataTable value="#{transaccionBeans.listaTransaccion}" var="p"
+			styleClass="tabla" headerClass="cabeceraTabla" rowClasses="filaImpar"
+			class="table table-hover">
+			<h:column>
+				<f:facet name="header">Codigo</f:facet>#{p.id}</h:column>
+			<h:column>
+				<f:facet name="header">Monto</f:facet>
+				<h:inputText value="#{p.monto}" size="10" rendered="#{p.editable}"
+					class="form-control" />
+				<h:outputText value="#{p.monto}" rendered="#{not p.editable}" />
+			</h:column>
+			<h:column>
+				<f:facet name="header">Direccion</f:facet>
+				<h:inputText value="#{p.direccion}" size="10" rendered="#{p.editable}"
+					class="form-control" />
+				<h:outputText value="#{p.direccion}" rendered="#{not p.editable}"  />
+			</h:column>
+			<h:column>
+				<f:facet name="header">Tipo Transaccion</f:facet>
+				<h:inputText value="#{p.tipoTransaccion}" size="10" rendered="#{p.editable}"
+					class="form-control" />
+				<h:outputText value="#{p.tipoTransaccion}" rendered="#{not p.editable}" />
+			</h:column>
+
+			<h:column>
+				<f:facet name="header">Accion</f:facet>
+				<h:commandLink value="Remove" action="#{bodegaBeans.remove(p)}" />
+			</h:column>
+			<h:column>
+				<f:facet name="header">Accion</f:facet>
+				<h:commandLink value="Edit" action="#{bodegaBeans.edit(p)}"
+					rendered="#{not p.editable}" />
+				<h:commandLink value="Save" action="#{bodegaBeans.save(p)}"
+					rendered="#{ p.editable}" />
+			</h:column>
+		</h:dataTable>
+		<li>Cuenta: <h:inputText size="10" value="#{bodegaBeans.cuenta}" /></li>
+		<li>Monto: <h:inputText id="stock" value="#{bodegaBeans.monto}" />	</h:inputText></li>
+		<li>Fecha: <h:inputText size="10" value="#{bodegaBeans.fecha}" /></li>
+		<li>Direccion: <h:inputText size="10" value="#{bodegaBeans.direccion}" /></li>
+		<li>Tipo Trasaccion: <h:inputText size="10" value="#{bodegaBeans.tipoTransaccion}" /></li>
+		<h:commandLink value="submit" type="submit"
+			action="#{bodegaBeans.add}" class="btn btn-danger btn block" />
+	</h:form>
 </body>
 </html>

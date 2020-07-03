@@ -33,6 +33,16 @@ public class LibroDiario implements Serializable {
 	public LibroDiario() {
 	
 	}
+	
+	public LibroDiario(String fecha, Caja caja, String monto) {
+		super();
+		this.fecha = fecha;
+		this.caja = caja;
+		this.monto = monto;
+	}
+
+
+
 	public int getId() {
 		return id;
 	}

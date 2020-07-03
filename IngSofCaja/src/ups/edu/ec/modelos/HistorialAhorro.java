@@ -34,6 +34,13 @@ public class HistorialAhorro implements Serializable {
 	
 	}
 
+	public HistorialAhorro(String date, LibroDiario historialAhorro, List<CuentaAhorro> cuentaAhorro) {
+		super();
+		this.date = date;
+		this.historialAhorro = historialAhorro;
+		this.cuentaAhorro = cuentaAhorro;
+	}
+
 	public int getId() {
 		return id;
 	}

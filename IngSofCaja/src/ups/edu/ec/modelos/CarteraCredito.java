@@ -34,6 +34,16 @@ public class CarteraCredito implements Serializable {
 		
 	}
 
+	
+	
+	public CarteraCredito(String date, LibroDiario carteraCredito) {
+		super();
+		this.date = date;
+		this.carteraCredito = carteraCredito;
+	}
+
+
+
 	public int getId() {
 		return id;
 	}

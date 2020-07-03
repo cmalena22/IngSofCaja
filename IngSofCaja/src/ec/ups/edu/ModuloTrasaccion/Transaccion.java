@@ -36,6 +36,20 @@ public class Transaccion implements Serializable {
 	public Transaccion() {
 	
 	}
+	
+	
+	
+	public Transaccion(String fecha, double monto, String direccion, String tipoTransaccion, CuentaAhorro transaccion) {
+		super();
+		this.fecha = fecha;
+		this.monto = monto;
+		this.direccion = direccion;
+		this.tipoTransaccion = tipoTransaccion;
+		this.transaccion = transaccion;
+	}
+
+
+
 	public int getId() {
 		return id;
 	}

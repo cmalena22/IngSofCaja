@@ -1,19 +1,9 @@
 package ec.ups.edu.ModuloSocio;
-<<<<<<< HEAD
-
-
-=======
->>>>>>> branch 'master' of https://github.com/cmalena22/IngSofCaja.git
-
 import java.io.Serializable;
 import javax.persistence.*;
 
-<<<<<<< HEAD
-
-
-=======
 import ec.ups.edu.ModuloTrasaccion.CuentaAhorro;
->>>>>>> branch 'master' of https://github.com/cmalena22/IngSofCaja.git
+
 
 /**
  * Entity implementation class for Entity: Socio
@@ -44,8 +34,24 @@ public class Socio implements Serializable {
 	private CuentaAhorro cuentaAhorro;
 	
 	public Socio() {
+		
+	}	
+	
+	public Socio(String nombre, String apellido, String telefono, String cedula, double salario, String perfil,
+			String trabajo, EstadoCuenta estadoCuenta, CuentaAhorro cuentaAhorro) {
 		super();
+		this.nombre = nombre;
+		this.apellido = apellido;
+		this.telefono = telefono;
+		this.cedula = cedula;
+		this.salario = salario;
+		this.perfil = perfil;
+		this.trabajo = trabajo;
+		this.estadoCuenta = estadoCuenta;
+		this.cuentaAhorro = cuentaAhorro;
 	}
+
+
 
 	public int getId() {
 		return id;

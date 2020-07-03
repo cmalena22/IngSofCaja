@@ -23,8 +23,21 @@ public class Cuota implements Serializable {
 	@JoinColumn
 	private Credito cuota;
 	public Cuota() {
-		super();
+	
 	}
+	
+	
+	
+	public Cuota(String date, String monto, int numcuota, Credito cuota) {
+		super();
+		this.date = date;
+		this.monto = monto;
+		this.numcuota = numcuota;
+		this.cuota = cuota;
+	}
+
+
+
 	public int getId() {
 		return id;
 	}

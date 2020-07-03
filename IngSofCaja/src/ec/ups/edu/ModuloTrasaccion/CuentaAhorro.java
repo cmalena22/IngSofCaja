@@ -42,6 +42,22 @@ public class CuentaAhorro implements Serializable {
 	public CuentaAhorro() {
 		
 	}
+	
+	
+	
+	public CuentaAhorro(String numCuenta, double saldoCuenta, int capital, Socio socio,
+			Credito credito, HistorialAhorro cuentaAhorro) {
+		super();
+		this.numCuenta = numCuenta;
+		this.saldoCuenta = saldoCuenta;
+		this.capital = capital;
+		this.socio = socio;
+		this.credito = credito;
+		this.cuentaAhorro = cuentaAhorro;
+	}
+
+
+
 	public int getId() {
 		return id;
 	}

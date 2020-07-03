@@ -48,6 +48,25 @@ public class Credito implements Serializable {
 	public Credito() {
 		
 	}
+	
+	
+	
+	public Credito(String nombreRecomienda, String cedulaRecomienda, String bancoRecomendado, String motivo,
+			CuentaAhorro credito, TablaAmortizacion tablaAmortizacion, CarteraCredito creditoCartera,
+			boolean aceptado) {
+		super();
+		this.nombreRecomienda = nombreRecomienda;
+		this.cedulaRecomienda = cedulaRecomienda;
+		this.bancoRecomendado = bancoRecomendado;
+		this.motivo = motivo;
+		this.credito = credito;
+		this.tablaAmortizacion = tablaAmortizacion;
+		this.creditoCartera = creditoCartera;
+		this.aceptado = aceptado;
+	}
+
+
+
 	public int getId() {
 		return id;
 	}

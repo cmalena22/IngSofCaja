@@ -28,6 +28,17 @@ public class Caja implements Serializable {
 	public Caja() {
 		
 	}
+	
+	
+	
+	public Caja(String date, LibroDiario caja) {
+		super();
+		this.date = date;
+		this.caja = caja;
+	}
+
+
+
 	public int getId() {
 		return id;
 	}

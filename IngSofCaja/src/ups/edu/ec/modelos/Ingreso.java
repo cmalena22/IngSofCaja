@@ -32,6 +32,16 @@ public class Ingreso implements Serializable {
 	public Ingreso() {
 	
 	}
+	
+	public Ingreso(double montoInicial, String fechas, String interesMora, String multas, Caja ingreso) {
+		super();
+		this.montoInicial = montoInicial;
+		this.fechas = fechas;
+		this.interesMora = interesMora;
+		this.multas = multas;
+		this.ingreso = ingreso;
+	}
+
 	public int getId() {
 		return id;
 	}

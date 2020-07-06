@@ -1,11 +1,13 @@
 package ups.edu.ec.ejb;
 
+import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 
-import ec.ups.edu.ModuloSocio.Administrador;
+
 import ec.ups.edu.ModuloSocio.EstadoCuenta;
 
+@Stateless
 public class EstadoCuentaFacade extends AbstractFacade<EstadoCuenta>{
 
 	@PersistenceContext(unitName = "IngSofCaja")

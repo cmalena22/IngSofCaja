@@ -4,12 +4,9 @@ import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 
-import ec.ups.edu.ModuloTrasaccion.Credito;
-import ups.edu.ec.modelos.Caja;
-<<<<<<< HEAD
 
-=======
->>>>>>> branch 'master' of https://github.com/cmalena22/IngSofCaja.git
+import ups.edu.ec.modelos.Caja;
+
 @Stateless
 public class CajaFacade extends AbstractFacade<Caja>{
 	@PersistenceContext(unitName = "IngSofCaja")

@@ -6,10 +6,7 @@ import javax.persistence.PersistenceContext;
 
 import ec.ups.edu.ModuloSocio.Administrador;
 import ec.ups.edu.ModuloTrasaccion.Cuota;
-<<<<<<< HEAD
 
-=======
->>>>>>> branch 'master' of https://github.com/cmalena22/IngSofCaja.git
 @Stateless
 public class CuotaFacade extends AbstractFacade<Cuota> {
 

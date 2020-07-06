@@ -6,10 +6,8 @@ import javax.persistence.PersistenceContext;
 
 
 import ec.ups.edu.ModuloSocio.EstadoCuenta;
-<<<<<<< HEAD
 
-=======
->>>>>>> branch 'master' of https://github.com/cmalena22/IngSofCaja.git
+
 @Stateless
 public class EstadoCuentaFacade extends AbstractFacade<EstadoCuenta>{
 

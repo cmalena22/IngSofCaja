@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://xmlns.jcp.org/jsf/html"
+	xmlns:f="http://xmlns.jcp.org/jsf/core">
+<h:head>
+	<title>Registro Cuenta</title>
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous"></link>.
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+
+	
+</h:head>
+<h:body>
+	<h3 class="row justify-content-center align-items-center">Registro Estado de Cuentas</h3>
+	<h:form>
+		<h:dataTable value="#{estadoCuentaBean.list}" var="c" styleClass="tabla"
+			headerClass="cabeceraTabla"   rowClasses="filaImpar"  class="table table-hover">
+			<h:column>
+				<f:facet name="header">Codigo</f:facet>#{c.id}</h:column>
+			<h:column>
+				<f:facet name="header">Saldo</f:facet>
+				<h:inputText value="#{c.saldo}" 
+					rendered="#{c.editable}" class="form-control"/>
+				<h:outputText value="#{c.saldo}" rendered="#{not c.editable}" />
+			</h:column>	
+			
+			<h:column>
+				<f:facet name="header">Fecha</f:facet>
+				<h:inputText value="#{c.fecha}" 
+					rendered="#{c.editable}" class="form-control" />
+				<h:outputText value="#{c.fecha}" rendered="#{not c.editable}" />
+			</h:column>	
+				
+			
+	
+			<h:column>
+				<f:facet name="header">Accion</f:facet>
+				<h:commandLink value="Delete" action="#{usuarioBean.delete(c)}" />
+			</h:column>
+			<h:column>
+				<f:facet name="header">Accion</f:facet>
+				<h:commandLink value="Edit" action="#{usuarioBean.edit(c)}"
+					rendered="#{not c.editable}" />
+				<h:commandLink value="Save" action="#{usuarioBean.save(c)}"
+					rendered="#{c.editable}" />
+			</h:column>
+		</h:dataTable>
+		
+		<div class="form-group text-center" >
+		
+		
+		<label class="form-group">Saldo:<h:inputText value="#{estadoCuentaBean.saldo}"  placeholder="Ej:Juan Manuel"/></label>
+		
+		
+		</div>
+		
+		<div class="form-group text-center">
+		
+		
+			<label class="form-group">Fecha:<h:inputText value="#{estadoCuentaBean.fecha}" placeholder="Ej:Marquez"/></label>
+		
+		
+		</div>
+		
+		
+		<div class="form-group text-center">
+		<h:commandButton value="Add" action="#{estadoCuentaBean.add}" class="btn btn-danger btn block  text-center form-group"/>
+	    </div>
+	</h:form>
+	
+	
+		
+	
+		
+		
+</h:body>
+</html>

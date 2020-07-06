@@ -1,9 +1,4 @@
 package ec.ups.edu.ModuloSocio;
-<<<<<<< HEAD
-
-
-=======
->>>>>>> branch 'master' of https://github.com/cmalena22/IngSofCaja.git
 
 import java.io.Serializable;
 import javax.persistence.*;
@@ -25,9 +20,23 @@ public class EstadoCuenta implements Serializable {
 	private String fecha;
 	@OneToOne 
 	private Socio socio;
+	@Transient
+	private boolean editable;
+	
 	public EstadoCuenta() {
 		super();
 	}
+	
+	
+	
+	public EstadoCuenta(double saldo, String fecha) {
+		super();
+		this.saldo = saldo;
+		this.fecha = fecha;
+	}
+
+
+
 	public int getId() {
 		return id;
 	}
@@ -72,6 +81,21 @@ public class EstadoCuenta implements Serializable {
 			return false;
 		return true;
 	}
+	
+	
+	
+	public boolean isEditable() {
+		return editable;
+	}
+
+
+
+	public void setEditable(boolean editable) {
+		this.editable = editable;
+	}
+
+
+
 	@Override
 	public String toString() {
 		return "EstadoCuenta [id=" + id + ", saldo=" + saldo + ", fecha=" + fecha + ", socio=" + socio + "]";

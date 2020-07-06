@@ -3,12 +3,10 @@ package ups.edu.ec.ejb;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 
-<<<<<<< HEAD
-import ups.edu.ec.modelos.Transaccion;
-=======
+
 import ec.ups.edu.ModuloSocio.Administrador;
 import ec.ups.edu.ModuloTrasaccion.Transaccion;
->>>>>>> branch 'master' of https://github.com/cmalena22/IngSofCaja.git
+
 
 
 

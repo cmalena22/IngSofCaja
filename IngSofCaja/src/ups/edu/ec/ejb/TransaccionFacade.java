@@ -4,16 +4,12 @@ import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import ec.ups.edu.ModuloTrasaccion.Transaccion;
 
-
-
-
-public class TransacionFacade extends AbstractFacade<Transaccion>  {
-
+public class TransaccionFacade extends AbstractFacade<Transaccion>{
 	@PersistenceContext(unitName = "IngSofCaja")
 	private EntityManager em;
 	
 
-	public TransacionFacade() {
+	public TransaccionFacade() {
 		super(Transaccion.class);
 	}
 

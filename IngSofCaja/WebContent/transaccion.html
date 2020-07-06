@@ -5,53 +5,65 @@
 	xmlns:f="http://xmlns.jcp.org/jsf/core">
 <head>
 <title>Index</title>
-<link rel="stylesheet" href="css/estilosIndex.css"></link>
+	<link rel="stylesheet"
+		href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+		integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
+		crossorigin="anonymous"></link>
+	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+		integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+		crossorigin="anonymous"></script>
+	<script
+		src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"
+		integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+		crossorigin="anonymous"></script>
+	<script
+		src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"
+		integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+		crossorigin="anonymous"></script>
+
 </head>
 <body>
-<h:form>
+	<h:form>
+
 		<h:dataTable value="#{transaccionBeans.listaTransaccion}" var="p"
 			styleClass="tabla" headerClass="cabeceraTabla" rowClasses="filaImpar"
 			class="table table-hover">
 			<h:column>
-				<f:facet name="header">Codigo</f:facet>#{p.id}</h:column>
+				<f:facet name="header">Fecha</f:facet>
+				<h:inputText value="#{p.fecha}" size="10" 	class="form-control" />
+				<h:outputText value="#{p.fecha}" />
+			</h:column>
 			<h:column>
 				<f:facet name="header">Monto</f:facet>
-				<h:inputText value="#{p.monto}" size="10" rendered="#{p.editable}"
-					class="form-control" />
-				<h:outputText value="#{p.monto}" rendered="#{not p.editable}" />
+				<h:inputText value="#{p.monto}" size="10" 	class="form-control" />
+				
+				<h:outputText value="#{p.monto}" />
 			</h:column>
 			<h:column>
 				<f:facet name="header">Direccion</f:facet>
-				<h:inputText value="#{p.direccion}" size="10" rendered="#{p.editable}"
-					class="form-control" />
-				<h:outputText value="#{p.direccion}" rendered="#{not p.editable}"  />
+				<h:inputText value="#{p.direccion}" size="10" class="form-control" />
+				<h:outputText value="#{p.direccion}" />
 			</h:column>
 			<h:column>
 				<f:facet name="header">Tipo Transaccion</f:facet>
-				<h:inputText value="#{p.tipoTransaccion}" size="10" rendered="#{p.editable}"
-					class="form-control" />
-				<h:outputText value="#{p.tipoTransaccion}" rendered="#{not p.editable}" />
+				<h:inputText value="#{p.tipoTransaccion}" size="10"
+					 class="form-control" />
+				<h:outputText value="#{p.tipoTransaccion}"
+					 />
 			</h:column>
 
-			<h:column>
-				<f:facet name="header">Accion</f:facet>
-				<h:commandLink value="Remove" action="#{bodegaBeans.remove(p)}" />
-			</h:column>
-			<h:column>
-				<f:facet name="header">Accion</f:facet>
-				<h:commandLink value="Edit" action="#{bodegaBeans.edit(p)}"
-					rendered="#{not p.editable}" />
-				<h:commandLink value="Save" action="#{bodegaBeans.save(p)}"
-					rendered="#{ p.editable}" />
-			</h:column>
 		</h:dataTable>
-		<li>Cuenta: <h:inputText size="10" value="#{bodegaBeans.cuenta}" /></li>
-		<li>Monto: <h:inputText id="stock" value="#{bodegaBeans.monto}" />	</h:inputText></li>
-		<li>Fecha: <h:inputText size="10" value="#{bodegaBeans.fecha}" /></li>
-		<li>Direccion: <h:inputText size="10" value="#{bodegaBeans.direccion}" /></li>
-		<li>Tipo Trasaccion: <h:inputText size="10" value="#{bodegaBeans.tipoTransaccion}" /></li>
+
+
+
+		<li>Cuenta: <h:inputText value="#{transaccionBeans.cuenta}" /></li>
+		<li>Monto: <h:inputText value="#{transaccionBeans.monto}" /> </h:inputText></li>
+		<li>Fecha: <h:inputText value="#{transaccionBeans.fecha}" /></li>
+		<li>Direccion: <h:inputText value="#{transaccionBeans.direccion}" /></li>
+		<li>Tipo Trasaccion: <h:inputText
+				value="#{transaccionBeans.tipoTransaccion}" /></li>
 		<h:commandLink value="submit" type="submit"
-			action="#{bodegaBeans.add}" class="btn btn-danger btn block" />
+			action="#{transaccionBeans.process}" class="btn btn-danger btn block" />
 	</h:form>
 </body>
 </html>

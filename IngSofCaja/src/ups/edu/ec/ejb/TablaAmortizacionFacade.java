@@ -1,10 +1,12 @@
 package ups.edu.ec.ejb;
 
+import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
+
 import javax.persistence.PersistenceContext;
 
 import ec.ups.edu.ModuloTrasaccion.TablaAmortizacion;
-
+@Stateless
 public class TablaAmortizacionFacade extends  AbstractFacade<TablaAmortizacion> {
 
 	@PersistenceContext(unitName = "IngSofCaja")

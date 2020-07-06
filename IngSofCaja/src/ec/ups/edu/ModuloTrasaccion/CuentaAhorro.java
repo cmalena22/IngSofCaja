@@ -32,6 +32,7 @@ public class CuentaAhorro implements Serializable {
 	private List<Transaccion>transaccion;
 	
 	@OneToOne(cascade = CascadeType.ALL, mappedBy = "credito")
+	//Mal ojooooooooo revisar
 	private Credito credito;
 	
 	

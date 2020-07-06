@@ -20,7 +20,7 @@
 		integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
 		crossorigin="anonymous"></script>
 		
-	<title>Transaccion</title>
+	<title>Tabla Amortizacion</title>
 
 	<style>
 .tabla {
@@ -54,54 +54,39 @@
 
 	<h:form>
 
-		<li>Fecha: <h:inputText size="10"
-				value="#{transaccionBean.fecha}" /></li>
-		<li>Monto: <h:inputText size="10"
-				value="#{transaccionBean.monto}" /></li>
-		<li>Direccion: <h:inputText size="10"
-				value="#{transaccionBean.direccion}" /></li>
-		<li>Tipo Transaccion: <h:inputText size="10"
-				value="#{transaccionBean.tipoTransaccion}" /></li>
-		<li>Cuenta: <h:inputText size="10"
-				value="#{transaccionBean.cuentaAhorro}" /></li>
-	
-		<h:dataTable value="#{transaccionBean.listaTransaccion}" var="p"
+		<li>Monto Inicial: <h:inputText size="10"
+				value="#{amortizacionBean.montoInicial}" /></li>
+		<li>Tasa Interes: <h:inputText size="10"
+				value="#{amortizacionBean.tasaInteres}" /></li>
+		
+
+
+		<h:dataTable value="#{amortizacionBean.listatabla}" var="p"
 			styleClass="tabla" headerClass="cabeceraTabla" rowClasses="filaImpar"
 			class="table table-hover">
 			<h:column>
 				<f:facet name="header">Codigo</f:facet>#{p.id}</h:column>
 			<h:column>
-				<f:facet name="header">Fecha</f:facet>
-				<h:inputText value="#{p.fecha}" size="10"
+				<f:facet name="header">Monto inicial</f:facet>
+				<h:inputText value="#{p.montoInicial}" size="10"
 					class="form-control" />
-				<h:outputText value="#{p.fecha}" />
+				<h:outputText value="#{p.montoInicial}" />
 			</h:column>
 
 			<h:column>
-				<f:facet name="header">Monto</f:facet>
-				<h:inputText value="#{p.monto}" size="10" class="form-control" />
-				<h:outputText value="#{p.monto}" />
+				<f:facet name="header">Tasa Interes</f:facet>
+				<h:inputText value="#{p.tasaInteres}" size="10" class="form-control" />
+				<h:outputText value="#{p.tasaInteres}" />
 			</h:column>
 
 			<h:column>
-				<f:facet name="header">Direccion</f:facet>
-				<h:inputText value="#{p.direccion}" size="10" class="form-control" />
-				<h:outputText value="#{p.direccion}" />
-			</h:column>
-				<h:column>
-				<f:facet name="header">Tipo Transaccion</f:facet>
-				<h:inputText value="#{p.tipoTransaccion}" size="10" class="form-control" />
-				<h:outputText value="#{p.tipoTransaccion}" />
-			</h:column>
-	
-				<h:column>
-				<f:facet name="header">Cuenta</f:facet>
-				<h:inputText value="#{p.cuentaAhorro}" size="10" class="form-control" />
-				<h:outputText value="#{p.cuentaAhorro}" />
+				<f:facet name="header">Pago Mensual</f:facet>
+				<h:inputText value="#{p.pagoMensual}" size="10" class="form-control" />
+				<h:outputText value="#{p.pagoMensual}" />
 			</h:column>
 		</h:dataTable>
 		<h:commandLink value="submit" type="submit"
-			action="#{transaccionBean.process}" class="btn btn-danger btn block" />
+			action="#{amortizacionBean.process}" class="btn btn-danger btn block" />
 
 	</h:form>
 

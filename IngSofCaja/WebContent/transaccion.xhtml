@@ -12,19 +12,19 @@
 <h:body>
 
 	<h:form>
-		<h:dataTable value="#{tranBean.listatran}" var="p"
+		<h:dataTable value="#{tablaAdministracionBean.lista}" var="p"
 			styleClass="tabla" headerClass="cabeceraTabla" rowClasses="filaImpar"
 			class="table table-hover">
 		<h:column>
 		<f:facet name="header">Monto</f:facet>
-				<h:inputText value="#{p.monto}" size="10" 
+				<h:inputText value="#{p.montoInicial}" size="10" 
 					class="form-control" />
-				<h:outputText value="#{p.monto}"  />
+				<h:outputText value="#{p.montoInicial}"  />
 		</h:column>
 		</h:dataTable>
-		<li>Monto <h:inputText size="10" value="#{tranBean.monto}" /></li>
+		<li>Monto <h:inputText size="10" value="#{tablaAdministracionBean.montoInicial" /></li>
 		<h:commandLink value="submit" type="submit"
-			action="#{tranBean.process}" class="btn btn-danger btn block" />
+			action="#{tablaAdministracionBean.process}" class="btn btn-danger btn block" />
 	</h:form>
 </h:body>
 </html>

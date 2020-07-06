@@ -6,7 +6,6 @@ import javax.persistence.PersistenceContext;
 
 import ec.ups.edu.ModuloTrasaccion.Credito;
 import ups.edu.ec.modelos.CarteraCredito;
-
 @Stateless
 public class CarteraCreditoFacade extends AbstractFacade<CarteraCredito> {
 	@PersistenceContext(unitName = "IngSofCaja")

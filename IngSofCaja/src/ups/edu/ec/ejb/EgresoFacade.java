@@ -5,7 +5,10 @@ import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 
 import ups.edu.ec.modelos.Egreso;
+<<<<<<< HEAD
 
+=======
+>>>>>>> branch 'master' of https://github.com/cmalena22/IngSofCaja.git
 @Stateless
 public class EgresoFacade extends AbstractFacade<Egreso> {
 	@PersistenceContext(unitName = "IngSofCaja")

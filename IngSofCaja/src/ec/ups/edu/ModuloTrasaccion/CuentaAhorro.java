@@ -24,17 +24,41 @@ public class CuentaAhorro implements Serializable {
 	private String numCuenta;
 	private double saldoCuenta;
 	private int capital;
-	@OneToOne(cascade = CascadeType.ALL,mappedBy = "socio")
+	
+	@OneToOne(cascade = CascadeType.ALL,mappedBy = "cuentaAhorro")
 	private Socio socio;
-	@OneToMany(cascade = CascadeType.ALL,mappedBy = "cuenta")
+	
+	@OneToMany(cascade = CascadeType.ALL,mappedBy = "transaccion")	
 	private List<Transaccion>transaccion;
-	@OneToOne
-	private Credito cuenta;	
+	
+	@OneToOne(cascade = CascadeType.ALL, mappedBy = "credito")
+	//Mal ojooooooooo revisar
+	private Credito credito;
+	
+	
+	
 	@ManyToOne
-	private HistorialAhorro historialCuentaAhorro;
+	@JoinColumn
+	private HistorialAhorro cuentaAhorro;
 	public CuentaAhorro() {
 		
 	}
+	
+	
+	
+	public CuentaAhorro(String numCuenta, double saldoCuenta, int capital, Socio socio,
+			Credito credito, HistorialAhorro cuentaAhorro) {
+		super();
+		this.numCuenta = numCuenta;
+		this.saldoCuenta = saldoCuenta;
+		this.capital = capital;
+		this.socio = socio;
+		this.credito = credito;
+		this.cuentaAhorro = cuentaAhorro;
+	}
+
+
+
 	public int getId() {
 		return id;
 	}
@@ -71,11 +95,19 @@ public class CuentaAhorro implements Serializable {
 	public void setTransaccion(List<Transaccion> transaccion) {
 		this.transaccion = transaccion;
 	}
-	public Credito getCuenta() {
-		return cuenta;
+	
+	public Credito getCredito() {
+		return credito;
 	}
-	public void setCuenta(Credito cuenta) {
-		this.cuenta = cuenta;
+	public void setCredito(Credito credito) {
+		this.credito = credito;
+	}
+	
+	public HistorialAhorro getCuentaAhorro() {
+		return cuentaAhorro;
+	}
+	public void setCuentaAhorro(HistorialAhorro cuentaAhorro) {
+		this.cuentaAhorro = cuentaAhorro;
 	}
 	@Override
 	public int hashCode() {
@@ -100,7 +132,8 @@ public class CuentaAhorro implements Serializable {
 	@Override
 	public String toString() {
 		return "CuentaAhorro [id=" + id + ", numCuenta=" + numCuenta + ", saldoCuenta=" + saldoCuenta + ", capital="
-				+ capital + ", socio=" + socio + ", transaccion=" + transaccion + ", cuenta=" + cuenta + "]";
+				+ capital + ", socio=" + socio + ", transaccion=" + transaccion + ", credito=" + credito
+				+ ", cuentaAhorro=" + cuentaAhorro + "]";
 	}
-   
+
 }

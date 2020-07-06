@@ -22,10 +22,24 @@ public class TablaAmortizacion implements Serializable {
 	private double tasaInteres;
 	private double pagoMensual;
 	@OneToOne
+	@JoinColumn
 	private Credito tabla;
 	public TablaAmortizacion() {
 	
 	}
+	
+	
+	
+	public TablaAmortizacion(int montoInicial, double tasaInteres, double pagoMensual, Credito tabla) {
+		super();
+		this.montoInicial = montoInicial;
+		this.tasaInteres = tasaInteres;
+		this.pagoMensual = pagoMensual;
+		this.tabla = tabla;
+	}
+
+
+
 	public int getId() {
 		return id;
 	}

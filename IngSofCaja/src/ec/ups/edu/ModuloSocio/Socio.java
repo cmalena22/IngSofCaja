@@ -1,19 +1,9 @@
 package ec.ups.edu.ModuloSocio;
-<<<<<<< HEAD
-
-
-=======
->>>>>>> branch 'master' of https://github.com/cmalena22/IngSofCaja.git
-
 import java.io.Serializable;
 import javax.persistence.*;
 
-<<<<<<< HEAD
-
-
-=======
 import ec.ups.edu.ModuloTrasaccion.CuentaAhorro;
->>>>>>> branch 'master' of https://github.com/cmalena22/IngSofCaja.git
+
 
 /**
  * Entity implementation class for Entity: Socio
@@ -35,14 +25,33 @@ public class Socio implements Serializable {
 	private double salario;
 	private String perfil;
 	private String trabajo;
+	
 	@OneToOne(cascade = CascadeType.ALL, mappedBy = "socio")
 	private EstadoCuenta estadoCuenta;
+	
 	@OneToOne
-	private CuentaAhorro socio;
+	@JoinColumn
+	private CuentaAhorro cuentaAhorro;
 	
 	public Socio() {
+		
+	}	
+	
+	public Socio(String nombre, String apellido, String telefono, String cedula, double salario, String perfil,
+			String trabajo, EstadoCuenta estadoCuenta, CuentaAhorro cuentaAhorro) {
 		super();
+		this.nombre = nombre;
+		this.apellido = apellido;
+		this.telefono = telefono;
+		this.cedula = cedula;
+		this.salario = salario;
+		this.perfil = perfil;
+		this.trabajo = trabajo;
+		this.estadoCuenta = estadoCuenta;
+		this.cuentaAhorro = cuentaAhorro;
 	}
+
+
 
 	public int getId() {
 		return id;
@@ -116,12 +125,13 @@ public class Socio implements Serializable {
 		this.estadoCuenta = estadoCuenta;
 	}
 
-	public CuentaAhorro getSocio() {
-		return socio;
+	
+	public CuentaAhorro getCuentaAhorro() {
+		return cuentaAhorro;
 	}
 
-	public void setSocio(CuentaAhorro socio) {
-		this.socio = socio;
+	public void setCuentaAhorro(CuentaAhorro cuentaAhorro) {
+		this.cuentaAhorro = cuentaAhorro;
 	}
 
 	@Override
@@ -150,7 +160,9 @@ public class Socio implements Serializable {
 	public String toString() {
 		return "Socio [id=" + id + ", nombre=" + nombre + ", apellido=" + apellido + ", telefono=" + telefono
 				+ ", cedula=" + cedula + ", salario=" + salario + ", perfil=" + perfil + ", trabajo=" + trabajo
-				+ ", estadoCuenta=" + estadoCuenta + ", socio=" + socio + "]";
+				+ ", estadoCuenta=" + estadoCuenta + ", cuentaAhorro=" + cuentaAhorro + "]";
 	}
+
+	
    
 }

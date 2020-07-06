@@ -24,14 +24,32 @@ public class Transaccion implements Serializable {
 	private double monto;
 	private String direccion;
 	private String tipoTransaccion;
+	
 	@ManyToOne
-	private CuentaAhorro cuenta;
+	@JoinColumn
+	private CuentaAhorro transaccion;
+	
 	@ManyToOne
+	@JoinColumn
 	private Ingreso listTransaccion;
+	
 	public Transaccion() {
 	
-		super();
 	}
+	
+	
+	
+	public Transaccion(String fecha, double monto, String direccion, String tipoTransaccion, CuentaAhorro transaccion) {
+		super();
+		this.fecha = fecha;
+		this.monto = monto;
+		this.direccion = direccion;
+		this.tipoTransaccion = tipoTransaccion;
+		this.transaccion = transaccion;
+	}
+
+
+
 	public int getId() {
 		return id;
 	}
@@ -62,11 +80,18 @@ public class Transaccion implements Serializable {
 	public void setTipoTransaccion(String tipoTransaccion) {
 		this.tipoTransaccion = tipoTransaccion;
 	}
-	public CuentaAhorro getCuenta() {
-		return cuenta;
+	
+	public CuentaAhorro getTransaccion() {
+		return transaccion;
 	}
-	public void setCuenta(CuentaAhorro cuenta) {
-		this.cuenta = cuenta;
+	public void setTransaccion(CuentaAhorro transaccion) {
+		this.transaccion = transaccion;
+	}
+	public Ingreso getListTransaccion() {
+		return listTransaccion;
+	}
+	public void setListTransaccion(Ingreso listTransaccion) {
+		this.listTransaccion = listTransaccion;
 	}
 	@Override
 	public int hashCode() {
@@ -91,7 +116,9 @@ public class Transaccion implements Serializable {
 	@Override
 	public String toString() {
 		return "Transaccion [id=" + id + ", fecha=" + fecha + ", monto=" + monto + ", direccion=" + direccion
-				+ ", tipoTransaccion=" + tipoTransaccion + ", cuenta=" + cuenta + "]";
+				+ ", tipoTransaccion=" + tipoTransaccion + ", transaccion=" + transaccion + ", listTransaccion="
+				+ listTransaccion + "]";
 	}
+	
    
 }

@@ -9,6 +9,7 @@ import javax.enterprise.context.SessionScoped;
 import javax.faces.annotation.FacesConfig;
 import javax.inject.Named;
 
+import ec.ups.edu.ModuloSocio.Socio;
 import ec.ups.edu.ModuloTrasaccion.CuentaAhorro;
 import ups.edu.ec.ejb.CuentaAhorroFacade;
 @FacesConfig(version = FacesConfig.Version.JSF_2_3)
@@ -67,19 +68,34 @@ public class CrearCuentaBean implements Serializable{
 	public void setCapital(int capital) {
 		this.capital = capital;
 	}
+	
+	
+
 	public String getSocio() {
 		return socio;
 	}
+
 	public void setSocio(String socio) {
 		this.socio = socio;
 	}
-	 public String process() {
+
+	public String process() {
+		 
+		return null;
+	 }	
+	 public Socio recu () {
+		Socio so= new Socio();
+		so=ejbCuentaAhorroFacade.nombreSocio(socio);
+		System.out.println(so);
+		return so;
+	 }
+	 public String add() {
 		 System.out.println("Num cuenta"+this.numCuenta);
 		 System.out.println("saldo"+this.saldoCuenta);
 		 System.out.println("Capital"+this.capital);
-		 System.out.println("saldo"+this.socio);
-		return null;
-	 }
-	
-
+		 System.out.println("socio"+this.socio);
+			ejbCuentaAhorroFacade.create(new CuentaAhorro(this.numCuenta,this.saldoCuenta,this.capital,recu()));
+			return null;
+			
+		}
 }

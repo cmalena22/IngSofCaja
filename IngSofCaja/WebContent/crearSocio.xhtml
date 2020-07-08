@@ -54,54 +54,70 @@
 
 	<h:form>
 
-		
-		<h:dataTable value="#{crearCuentaBean.listaCuenta}" var="p"
+				
+								
+		<h:dataTable value="#{socioBean.listaSocio}" var="p"
 			styleClass="tabla" headerClass="cabeceraTabla" rowClasses="filaImpar"
 			class="table table-hover">
 			<h:column>
 				<f:facet name="header">Codigo</f:facet>#{p.id}</h:column>
 			<h:column>
-				<f:facet name="header">Numero de Cuenta</f:facet>
-				<h:inputText value="#{p.numCuenta}" size="10"
-					class="form-control" />
-				<h:outputText value="#p.numCuenta}" />
+			
+			
+			<h:column>
+				<f:facet name="header">Nombre</f:facet>
+				<h:inputText value="#{p.nombre}" size="10" class="form-control" />
+				<h:outputText value="#{p.nombre}" size="10" class="form-control" />
+			</h:column>
+			
+			
+			<h:column>
+				<f:facet name="header">Apellido</f:facet>
+				<h:inputText value="#{p.apellido}" size="10" class="form-control" />
+				<h:outputText value="#{p.apellido}"  size="10" class="form-control"/>
+			</h:column>
+			
+				<f:facet name="header">Cedula</f:facet>
+				<h:inputText value="#{p.cedula}" size="10"	class="form-control" />
+				<h:outputText value="#p.cedula}" class="form-control" />
 			</h:column>
 
-			<h:column>
-				<f:facet name="header">Saldo Cuenta</f:facet>
-				<h:inputText value="#{p.saldoCuenta}" size="10" class="form-control" />
-				<h:outputText value="#{p.saldoCuenta}" />
-			</h:column>
 
-			<h:column>
-				<f:facet name="header">Capital</f:facet>
-				<h:inputText value="#{p.capital}" size="10" class="form-control" />
-				<h:outputText value="#{p.capital}" />
-			</h:column>
 				<h:column>
-				<f:facet name="header">Socio</f:facet>
-				<h:inputText value="#{p.cuentaAhorroSocio}" size="10" class="form-control" />
-				<h:outputText value="#{p.cuentaAhorroSocio}" />
+				<f:facet name="header">Salario</f:facet>
+				<h:inputText value="#{p.salario}" size="10" class="form-control" />
+				<h:outputText value="#{p.salario}"   size="10" class="form-control"/>
 			</h:column>
 	
-			
+				<h:column>
+				<f:facet name="header">Perfil</f:facet>
+				<h:inputText value="#{p.perfil}" size="10" class="form-control" />
+				<h:outputText value="#{p.perfil}"  size="10" class="form-control"/>
+			</h:column>
+				<h:column>
+				<f:facet name="header">Trabajo</f:facet>
+				<h:inputText value="#{p.trabajo}" size="10" class="form-control" />
+				<h:outputText value="#{p.trabajo}"  size="10" class="form-control"/>
+			</h:column>
 		</h:dataTable>
 		
-		<li>Numero Cuenta: <h:inputText size="10"
-				value="#{crearCuentaBean.numCuenta}" /></li>
-		<li>Saldo Cuenta: <h:inputText size="10"
-				value="#{crearCuentaBean.saldoCuenta}" /></li>
-		<li>Capital: <h:inputText size="10"
-				value="#{crearCuentaBean.capital}" /></li>
 		
-		<p>Socio</p>
-		<h:selectOneMenu value="#{crearCuentaBean.socio}" >
-			<f:selectItems value="#{socioBean.listaSocio}"
-				class="form-control" />
-		</h:selectOneMenu>
-		
+		<li>Cedula: <h:inputText size="10"
+				value="#{socioBean.cedula}" /></li>
+		<li>Nombre: <h:inputText size="10"
+				value="#{socioBean.nombre}" /></li>
+		<li>Apellido: <h:inputText size="10"
+				value="#{socioBean.apellido}" /></li>
+		<li>Telefono: <h:inputText size="10"
+				value="#{socioBean.telefono}" /></li>
+		<li>Salario: <h:inputText size="10"
+				value="#{socioBean.salario}" /></li>
+		<li>Perfil: <h:inputText size="10"
+				value="#{socioBean.perfil}" /></li>
+		<li>Trabajo: <h:inputText size="10"
+				value="#{socioBean.trabajo}" /></li>
 		<h:commandLink value="submit" type="submit"
-			action="#{crearCuentaBean.add}" class="btn btn-danger btn block" />
+			action="#{socioBean.add}" class="btn btn-danger btn block" />
 
 	</h:form>
 

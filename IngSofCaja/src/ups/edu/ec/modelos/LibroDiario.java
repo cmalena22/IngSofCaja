@@ -23,8 +23,9 @@ public class LibroDiario implements Serializable {
 	@OneToOne(cascade = CascadeType.ALL,mappedBy = "carteraCredito")
 	private CarteraCredito listCarteraCredito;
 	
-	@OneToOne(cascade = CascadeType.ALL,mappedBy = "historialAhorro")
-	private HistorialAhorro listHistorialAhorro;
+	@OneToOne
+	@JoinColumn
+	private HistorialAhorro historialAhorro;
 	
 	@OneToOne
 	@JoinColumn
@@ -62,12 +63,15 @@ public class LibroDiario implements Serializable {
 	public void setListCarteraCredito(CarteraCredito listCarteraCredito) {
 		this.listCarteraCredito = listCarteraCredito;
 	}
-	public HistorialAhorro getListHistorialAhorro() {
-		return listHistorialAhorro;
+	
+	public HistorialAhorro getHistorialAhorro() {
+		return historialAhorro;
 	}
-	public void setListHistorialAhorro(HistorialAhorro listHistorialAhorro) {
-		this.listHistorialAhorro = listHistorialAhorro;
+
+	public void setHistorialAhorro(HistorialAhorro historialAhorro) {
+		this.historialAhorro = historialAhorro;
 	}
+
 	public Caja getCaja() {
 		return caja;
 	}
@@ -103,10 +107,11 @@ public class LibroDiario implements Serializable {
 			return false;
 		return true;
 	}
+
 	@Override
 	public String toString() {
 		return "LibroDiario [id=" + id + ", fecha=" + fecha + ", listCarteraCredito=" + listCarteraCredito
-				+ ", listHistorialAhorro=" + listHistorialAhorro + ", caja=" + caja + ", monto=" + monto + "]";
+				+ ", historialAhorro=" + historialAhorro + ", caja=" + caja + ", monto=" + monto + "]";
 	}
-
+	
 }

@@ -27,8 +27,9 @@ public class Ingreso implements Serializable {
 	@ManyToOne
 	@JoinColumn
 	private Caja ingreso;
-	@OneToMany(cascade = CascadeType.ALL, mappedBy = "listTransaccion")
-	private List<Transaccion>listTransaccion;
+	@ManyToOne
+	@JoinColumn
+	private Transaccion listTransaccion;
 	public Ingreso() {
 	
 	}
@@ -78,12 +79,15 @@ public class Ingreso implements Serializable {
 	public void setIngreso(Caja ingreso) {
 		this.ingreso = ingreso;
 	}
-	public List<Transaccion> getListTransaccion() {
+	
+	public Transaccion getListTransaccion() {
 		return listTransaccion;
 	}
-	public void setListTransaccion(List<Transaccion> listTransaccion) {
+
+	public void setListTransaccion(Transaccion listTransaccion) {
 		this.listTransaccion = listTransaccion;
 	}
+
 	@Override
 	public int hashCode() {
 		final int prime = 31;

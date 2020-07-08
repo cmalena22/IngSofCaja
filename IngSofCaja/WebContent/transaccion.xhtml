@@ -54,17 +54,7 @@
 
 	<h:form>
 
-		<li>Fecha: <h:inputText size="10"
-				value="#{transaccionBean.fecha}" /></li>
-		<li>Monto: <h:inputText size="10"
-				value="#{transaccionBean.monto}" /></li>
-		<li>Direccion: <h:inputText size="10"
-				value="#{transaccionBean.direccion}" /></li>
-		<li>Tipo Transaccion: <h:inputText size="10"
-				value="#{transaccionBean.tipoTransaccion}" /></li>
-		<li>Cuenta: <h:inputText size="10"
-				value="#{transaccionBean.cuentaAhorro}" /></li>
-	
+		
 		<h:dataTable value="#{transaccionBean.listaTransaccion}" var="p"
 			styleClass="tabla" headerClass="cabeceraTabla" rowClasses="filaImpar"
 			class="table table-hover">
@@ -96,12 +86,29 @@
 	
 				<h:column>
 				<f:facet name="header">Cuenta</f:facet>
-				<h:inputText value="#{p.cuentaAhorro}" size="10" class="form-control" />
-				<h:outputText value="#{p.cuentaAhorro}" />
+				<h:inputText value="#{p.transaccion}" size="10" class="form-control" />
+				<h:outputText value="#{p.transaccion}" />
 			</h:column>
 		</h:dataTable>
+		
+		<li>Fecha: <h:inputText size="10"
+				value="#{transaccionBean.fecha}" /></li>
+		<li>Monto: <h:inputText size="10"
+				value="#{transaccionBean.monto}" /></li>
+		<li>Direccion: <h:inputText size="10"
+				value="#{transaccionBean.direccion}" /></li>
+		<li>Tipo Transaccion: <h:inputText size="10"
+				value="#{transaccionBean.tipoTransaccion}" /></li>
+				
+		<p>Cuenta</p>
+		<h:selectOneMenu value="#{transaccionBean.cuentaAhorro}" >
+			<f:selectItems value="#{crearCuentaBean.listaCuenta}"
+				class="form-control" />
+		</h:selectOneMenu>
 		<h:commandLink value="submit" type="submit"
-			action="#{transaccionBean.process}" class="btn btn-danger btn block" />
+			action="#{transaccionBean.add}" class="btn btn-danger btn block" />
+		<h:commandLink value="date" type="submit"
+			action="#{transaccionBean.getFechaActual}" class="btn btn-danger btn block" />v
 
 	</h:form>
 

@@ -27,18 +27,17 @@ public class Socio implements Serializable {
 	private String trabajo;
 	
 	@OneToOne(cascade = CascadeType.ALL, mappedBy = "socio")
-	private EstadoCuenta estadoCuenta;
-	
-	@OneToOne
-	@JoinColumn
-	private CuentaAhorro cuentaAhorro;
+	private EstadoCuenta estadoCuenta;	
+	@OneToOne(cascade = CascadeType.ALL,mappedBy = "cuentaAhorroSocio")
+	private CuentaAhorro socio;
 	
 	public Socio() {
 		
 	}	
 	
+
 	public Socio(String nombre, String apellido, String telefono, String cedula, double salario, String perfil,
-			String trabajo, EstadoCuenta estadoCuenta, CuentaAhorro cuentaAhorro) {
+			String trabajo) {
 		super();
 		this.nombre = nombre;
 		this.apellido = apellido;
@@ -47,10 +46,7 @@ public class Socio implements Serializable {
 		this.salario = salario;
 		this.perfil = perfil;
 		this.trabajo = trabajo;
-		this.estadoCuenta = estadoCuenta;
-		this.cuentaAhorro = cuentaAhorro;
 	}
-
 
 
 	public int getId() {
@@ -126,13 +122,17 @@ public class Socio implements Serializable {
 	}
 
 	
-	public CuentaAhorro getCuentaAhorro() {
-		return cuentaAhorro;
+	
+
+	public CuentaAhorro getSocio() {
+		return socio;
 	}
 
-	public void setCuentaAhorro(CuentaAhorro cuentaAhorro) {
-		this.cuentaAhorro = cuentaAhorro;
+
+	public void setSocio(CuentaAhorro socio) {
+		this.socio = socio;
 	}
+
 
 	@Override
 	public int hashCode() {
@@ -156,13 +156,13 @@ public class Socio implements Serializable {
 		return true;
 	}
 
+
 	@Override
 	public String toString() {
-		return "Socio [id=" + id + ", nombre=" + nombre + ", apellido=" + apellido + ", telefono=" + telefono
-				+ ", cedula=" + cedula + ", salario=" + salario + ", perfil=" + perfil + ", trabajo=" + trabajo
-				+ ", estadoCuenta=" + estadoCuenta + ", cuentaAhorro=" + cuentaAhorro + "]";
+		return nombre;
 	}
 
+	
 	
    
 }

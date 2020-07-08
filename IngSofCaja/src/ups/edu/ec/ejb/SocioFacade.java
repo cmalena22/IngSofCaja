@@ -1,8 +1,10 @@
 package ups.edu.ec.ejb;
 
 import javax.ejb.Stateless;
+
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
+import javax.persistence.Query;
 
 import ec.ups.edu.ModuloSocio.Administrador;
 import ec.ups.edu.ModuloSocio.Socio;

@@ -39,11 +39,9 @@ public class Credito implements Serializable {
 	@OneToMany(cascade = CascadeType.ALL, mappedBy = "cuota")
 	private List<Cuota>listaCuota;
 	
-	@ManyToOne
-	@JoinColumn
-	private CarteraCredito creditoCartera;
 	
-	
+	@OneToMany(cascade = CascadeType.ALL, mappedBy = "creditoCartera")
+	private List<CarteraCredito>listCreditoenCartera;
 	private boolean aceptado=true;
 	public Credito() {
 		
@@ -61,7 +59,6 @@ public class Credito implements Serializable {
 		this.motivo = motivo;
 		this.credito = credito;
 		this.tablaAmortizacion = tablaAmortizacion;
-		this.creditoCartera = creditoCartera;
 		this.aceptado = aceptado;
 	}
 
@@ -143,18 +140,24 @@ public class Credito implements Serializable {
 		this.tablaAmortizacion = tablaAmortizacion;
 	}
 
-	public CarteraCredito getCreditoCartera() {
-		return creditoCartera;
+	
+	public List<CarteraCredito> getListCreditoenCartera() {
+		return listCreditoenCartera;
 	}
-	public void setCreditoCartera(CarteraCredito creditoCartera) {
-		this.creditoCartera = creditoCartera;
+	public void setListCreditoenCartera(List<CarteraCredito> listCreditoenCartera) {
+		this.listCreditoenCartera = listCreditoenCartera;
 	}
+	
 	@Override
 	public String toString() {
 		return "Credito [id=" + id + ", nombreRecomienda=" + nombreRecomienda + ", cedulaRecomienda=" + cedulaRecomienda
 				+ ", bancoRecomendado=" + bancoRecomendado + ", motivo=" + motivo + ", credito=" + credito
-				+ ", tablaAmortizacion=" + tablaAmortizacion + ", listaCuota=" + listaCuota + ", creditoCartera="
-				+ creditoCartera + ", aceptado=" + aceptado + "]";
+				+ ", tablaAmortizacion=" + tablaAmortizacion + ", listaCuota=" + listaCuota + ", listCreditoenCartera="
+				+ listCreditoenCartera + ", aceptado=" + aceptado + "]";
 	}
+
+
+
+	
 
 }

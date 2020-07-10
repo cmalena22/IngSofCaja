@@ -24,6 +24,8 @@ public class CrearCuentaBean implements Serializable{
 	private int capital;
 	private String socio;
 	private List<CuentaAhorro>listaCuenta;
+	
+	
 	public CrearCuentaBean() {
 		super();
 	}
@@ -32,6 +34,7 @@ public class CrearCuentaBean implements Serializable{
 	public void init() {		
 		listaCuenta = ejbCuentaAhorroFacade.findAll();
 	}
+	
 	
 	
 	public CuentaAhorroFacade getEjbCuentaAhorroFacade() {
@@ -85,7 +88,8 @@ public class CrearCuentaBean implements Serializable{
 	 }	
 	 public Socio recu () {
 		Socio so= new Socio();
-		so=ejbCuentaAhorroFacade.nombreSocio(socio);
+		String nombre=so.getNombre();
+		so=ejbCuentaAhorroFacade.nombreSocio(nombre);
 		System.out.println(so);
 		return so;
 	 }
@@ -98,4 +102,10 @@ public class CrearCuentaBean implements Serializable{
 			return null;
 			
 		}
+	 
+	 public String tabla() {
+		 
+		return null;
+		 
+	 }
 }

@@ -27,8 +27,10 @@ public class CarteraCredito implements Serializable {
 	private LibroDiario carteraCredito;
 	
 	
-	@OneToMany(cascade = CascadeType.ALL, mappedBy = "creditoCartera")
-	private List<Credito>listCredito;
+	@ManyToOne
+	@JoinColumn
+	private Credito creditoCartera;
+	
 	
 	public CarteraCredito() {
 		
@@ -68,13 +70,19 @@ public class CarteraCredito implements Serializable {
 		this.carteraCredito = carteraCredito;
 	}
 
-	public List<Credito> getListCredito() {
-		return listCredito;
+	
+
+	public Credito getCreditoCartera() {
+		return creditoCartera;
 	}
 
-	public void setListCredito(List<Credito> listCredito) {
-		this.listCredito = listCredito;
+
+
+	public void setCreditoCartera(Credito creditoCartera) {
+		this.creditoCartera = creditoCartera;
 	}
+
+
 
 	@Override
 	public int hashCode() {
@@ -98,10 +106,14 @@ public class CarteraCredito implements Serializable {
 		return true;
 	}
 
+
+
 	@Override
 	public String toString() {
-		return "CarteraCredito [id=" + id + ", date=" + date + ", carteraCredito=" + carteraCredito + ", listCredito="
-				+ listCredito + "]";
+		return "CarteraCredito [id=" + id + ", date=" + date + ", carteraCredito=" + carteraCredito
+				+ ", creditoCartera=" + creditoCartera + "]";
 	}
+
+	
    
 }

@@ -20,7 +20,7 @@
 		integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
 		crossorigin="anonymous"></script>
 		
-	<title>Crear Cuenta</title>
+	<title>Crear Credito</title>
 
 	<style>
 .tabla {
@@ -55,53 +55,61 @@
 	<h:form>
 
 		
-		<h:dataTable value="#{crearCuentaBean.listaCuenta}" var="p"
+		<h:dataTable value="#{crearCreditoBean.listaCredito}" var="p"
 			styleClass="tabla" headerClass="cabeceraTabla" rowClasses="filaImpar"
 			class="table table-hover">
 			<h:column>
 				<f:facet name="header">Codigo</f:facet>#{p.id}</h:column>
 			<h:column>
-				<f:facet name="header">Numero de Cuenta</f:facet>
-				<h:inputText value="#{p.numCuenta}" size="10"
+				<f:facet name="header">Nombre Recomienda</f:facet>
+				<h:inputText value="#{p.nombreRecomienda}" size="10"
 					class="form-control" />
-				<h:outputText value="#p.numCuenta}" />
+				<h:outputText value="{#p.nombreRecomienda}" />
 			</h:column>
 
 			<h:column>
-				<f:facet name="header">Saldo Cuenta</f:facet>
-				<h:inputText value="#{p.saldoCuenta}" size="10" class="form-control" />
-				<h:outputText value="#{p.saldoCuenta}" />
+				<f:facet name="header">Cedula Recomienta</f:facet>
+				<h:inputText value="#{p.cedulaRecomienda}" size="10" class="form-control" />
+				<h:outputText value="#{p.cedulaRecomienda}" />
 			</h:column>
 
 			<h:column>
-				<f:facet name="header">Capital</f:facet>
-				<h:inputText value="#{p.capital}" size="10" class="form-control" />
-				<h:outputText value="#{p.capital}" />
-			</h:column>
-				<h:column>
-				<f:facet name="header">Socio</f:facet>
-				<h:inputText value="#{p.cuentaAhorroSocio}" size="10" class="form-control" />
-				<h:outputText value="#{p.cuentaAhorroSocio}" />
-			</h:column>
-			
+				<f:facet name="header">Banco Recomendado</f:facet>
+				<h:inputText value="#{p.bancoRecomendado}" size="10" class="form-control" />
+				<h:outputText value="#{p.bancoRecomendado}" />
+	
+				</h:column>
 		</h:dataTable>
 		
-		<li>Numero Cuenta: <h:inputText size="10"
-				value="#{crearCuentaBean.numCuenta}" /></li>
-		<li>Saldo Cuenta: <h:inputText size="10"
-				value="#{crearCuentaBean.saldoCuenta}" /></li>
-		<li>Capital: <h:inputText size="10"
-				value="#{crearCuentaBean.capital}" /></li>
-		
-		<p>Socio</p>
-		<h:selectOneMenu value="#{crearCuentaBean.socio}" >
-			<f:selectItems value="#{socioBean.listaSocio}"
+		<li>Nombre Recomienda: <h:inputText size="10"
+				value="#{crearCreditoBean.nombreRecomienda}" /></li>
+		<li>Cedula Recomienta: <h:inputText size="10"
+				value="#{crearCreditoBean.cedulaRecomienda}" /></li>
+		<li>Banco Recomienda: <h:inputText size="10"
+				value="#{crearCreditoBean.bancoRecomendado}" /></li>
+		<li>Motivo: <h:inputText size="10"
+				value="#{crearCreditoBean.motivo}" /></li>
+	
+		<p>Cuenta</p>
+		<h:selectOneMenu value="#{crearCreditoBean.cuentaAhorro}" >
+			<f:selectItems value="#{crearCuentaBean.listaCuenta}"
 				class="form-control" />
 		</h:selectOneMenu>
 		
-		<h:commandLink value="submit" type="submit"
-			action="#{crearCuentaBean.add}" class="btn btn-danger btn block" />
-
+	<h:commandLink value="Confirmar" type="submit"
+			action="#{crearCreditoBean.add}" class="btn btn-danger btn block" />
+		
+	<li>Monto Inicial: <h:inputText size="10"
+				value="#{crearCreditoBean.montoInicial}" /></li>
+		<li>Tasa Interes: <h:inputText size="10"
+				value="#{crearCreditoBean.tasaInteres}" /></li>
+		<li>Pago Mesual: <h:outputText size="10"
+				value="#{crearCreditoBean.pagoMensual}" /></li>
+		<li>Meses: <h:inputText size="10"
+				value="#{crearCreditoBean.meses}" /></li>
+	<h:commandLink value="Calcular Tabla amortizacion" type="submit"
+			action="#{crearCreditoBean.interes}" class="btn btn-danger btn block" />
+	
 	</h:form>
 
 

@@ -23,6 +23,10 @@ public class Egreso implements Serializable {
 	@ManyToOne
 	@JoinColumn
 	private Caja egreso;
+	
+
+	@Transient
+	private boolean editable;
 	public Egreso() {
 	
 	}
@@ -96,6 +100,21 @@ public class Egreso implements Serializable {
 			return false;
 		return true;
 	}
+	
+	
+	
+	public boolean isEditable() {
+		return editable;
+	}
+
+
+
+	public void setEditable(boolean editable) {
+		this.editable = editable;
+	}
+
+
+
 	@Override
 	public String toString() {
 		return "Egreso [id=" + id + ", montoIniciail=" + montoIniciail + ", fecha=" + fecha + ", interesAhorros="

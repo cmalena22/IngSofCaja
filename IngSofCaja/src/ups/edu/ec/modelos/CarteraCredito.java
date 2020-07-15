@@ -31,7 +31,9 @@ public class CarteraCredito implements Serializable {
 	@JoinColumn
 	private Credito creditoCartera;
 	
-	
+
+	@Transient
+	private boolean editable;
 	public CarteraCredito() {
 		
 	}
@@ -104,6 +106,18 @@ public class CarteraCredito implements Serializable {
 		if (id != other.id)
 			return false;
 		return true;
+	}
+
+
+
+	public boolean isEditable() {
+		return editable;
+	}
+
+
+
+	public void setEditable(boolean editable) {
+		this.editable = editable;
 	}
 
 

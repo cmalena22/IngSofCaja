@@ -1,6 +1,7 @@
 package ups.edu.ec.controlador;
 
 import java.io.Serializable;
+
 import java.util.List;
 
 import javax.annotation.PostConstruct;
@@ -45,8 +46,8 @@ public class CrearCuentaBean implements Serializable{
 		this.ejbCuentaAhorroFacade = ejbCuentaAhorroFacade;
 	}
 
-	public List<CuentaAhorro> getListaCuenta() {
-		return listaCuenta;
+	public CuentaAhorro[] getListaCuenta() {
+		return listaCuenta.toArray(new CuentaAhorro[0]);
 	}
 
 	public void setListaCuenta(List<CuentaAhorro> listaCuenta) {
@@ -108,4 +109,20 @@ public class CrearCuentaBean implements Serializable{
 		return null;
 		 
 	 }
+	 public String remove(CuentaAhorro p) {
+			ejbCuentaAhorroFacade.remove(p);
+			listaCuenta = ejbCuentaAhorroFacade.findAll();
+			return null;
+		}
+
+		public String edit(CuentaAhorro p) {
+			p.setEditable(true);
+			return null;
+		}
+
+		public String save(CuentaAhorro p) {
+			ejbCuentaAhorroFacade.edit(p);
+			p.setEditable(false);
+			return null;
+		}
 }

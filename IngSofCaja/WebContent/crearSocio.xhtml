@@ -62,42 +62,39 @@
 			<h:column>
 				<f:facet name="header">Codigo</f:facet>#{p.id}</h:column>
 			<h:column>
-			
-			
-			<h:column>
 				<f:facet name="header">Nombre</f:facet>
-				<h:inputText value="#{p.nombre}" size="10" class="form-control" />
-				<h:outputText value="#{p.nombre}" size="10" class="form-control" />
+				<h:inputText value="#{p.nombre}" size="10"  rendered="#{p.editable}"  class="form-control" />
+				<h:outputText value="#{p.nombre}" size="10"  rendered="#{not p.editable}" class="form-control" />
 			</h:column>
 			
 			
 			<h:column>
 				<f:facet name="header">Apellido</f:facet>
-				<h:inputText value="#{p.apellido}" size="10" class="form-control" />
-				<h:outputText value="#{p.apellido}"  size="10" class="form-control"/>
+				<h:inputText value="#{p.apellido}" size="10" rendered="#{p.editable}" class="form-control" />
+				<h:outputText value="#{p.apellido}"  size="10"  rendered="#{not p.editable}" class="form-control"/>
 			</h:column>
-			
+			<h:column>
 				<f:facet name="header">Cedula</f:facet>
-				<h:inputText value="#{p.cedula}" size="10"	class="form-control" />
-				<h:outputText value="#p.cedula}" class="form-control" />
+				<h:inputText value="#{p.cedula}" size="10"	 rendered="#{p.editable}" class="form-control" />
+				<h:outputText value="#{p.cedula}"  rendered="#{not p.editable}" class="form-control" />
 			</h:column>
 
 
 				<h:column>
 				<f:facet name="header">Salario</f:facet>
-				<h:inputText value="#{p.salario}" size="10" class="form-control" />
-				<h:outputText value="#{p.salario}"   size="10" class="form-control"/>
+				<h:inputText value="#{p.salario}" size="10" rendered="#{p.editable}" class="form-control" />
+				<h:outputText value="#{p.salario}"   size="10"  rendered="#{not p.editable}" class="form-control"/>
 			</h:column>
 	
 				<h:column>
 				<f:facet name="header">Perfil</f:facet>
-				<h:inputText value="#{p.perfil}" size="10" class="form-control" />
-				<h:outputText value="#{p.perfil}"  size="10" class="form-control"/>
+				<h:inputText value="#{p.perfil}" size="10" rendered="#{p.editable}" class="form-control" />
+				<h:outputText value="#{p.perfil}"  size="10"  rendered="#{not p.editable}" class="form-control"/>
 			</h:column>
 				<h:column>
 				<f:facet name="header">Trabajo</f:facet>
-				<h:inputText value="#{p.trabajo}" size="10" class="form-control" />
-				<h:outputText value="#{p.trabajo}"  size="10" class="form-control"/>
+				<h:inputText value="#{p.trabajo}" size="10" rendered="#{p.editable}" class="form-control" />
+				<h:outputText value="#{p.trabajo}"  size="10"  rendered="#{not p.editable}" class="form-control"/>
 			</h:column>
 		</h:dataTable>
 		

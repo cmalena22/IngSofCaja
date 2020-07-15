@@ -1,6 +1,7 @@
 package ec.ups.edu.ModuloTrasaccion;
 
 import java.io.Serializable;
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.persistence.*;
@@ -43,6 +44,10 @@ public class Credito implements Serializable {
 	@OneToMany(cascade = CascadeType.ALL, mappedBy = "creditoCartera")
 	private List<CarteraCredito>listCreditoenCartera;
 	private boolean aceptado=true;
+	
+
+	@Transient
+	private boolean editable;
 	public Credito() {
 		
 	}
@@ -60,6 +65,7 @@ public class Credito implements Serializable {
 		this.credito = credito;
 		this.tablaAmortizacion = tablaAmortizacion;
 		this.aceptado = aceptado;
+		this.listaCuota=new ArrayList<Cuota>();
 	}
 
 
@@ -148,12 +154,28 @@ public class Credito implements Serializable {
 		this.listCreditoenCartera = listCreditoenCartera;
 	}
 	
+	  public void addCuota(Cuota cuota) {
+			this.listaCuota.add(cuota);
+		    }
+	
+	  
+	  
+	public boolean isEditable() {
+		return editable;
+	}
+
+
+
+	public void setEditable(boolean editable) {
+		this.editable = editable;
+	}
+
+
+
 	@Override
 	public String toString() {
 		return "Credito [id=" + id + ", nombreRecomienda=" + nombreRecomienda + ", cedulaRecomienda=" + cedulaRecomienda
-				+ ", bancoRecomendado=" + bancoRecomendado + ", motivo=" + motivo + ", credito=" + credito
-				+ ", tablaAmortizacion=" + tablaAmortizacion + ", listaCuota=" + listaCuota + ", listCreditoenCartera="
-				+ listCreditoenCartera + ", aceptado=" + aceptado + "]";
+				+ ", bancoRecomendado=" + bancoRecomendado + ", motivo=" + motivo + ", credito=" + credito;
 	}
 
 

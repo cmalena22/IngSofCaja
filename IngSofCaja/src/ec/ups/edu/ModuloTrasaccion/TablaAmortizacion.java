@@ -20,17 +20,20 @@ public class TablaAmortizacion implements Serializable {
 	private int id;
 	private int montoInicial;
 	private double tasaInteres;
-	private double pagoMensual;
+	private float pagoMensual;
 	@OneToOne
 	@JoinColumn
 	private Credito tabla;
+
+	@Transient
+	private boolean editable;
 	public TablaAmortizacion() {
 	
 	}
 	
 	
 	
-	public TablaAmortizacion(int montoInicial, double tasaInteres, double pagoMensual, Credito tabla) {
+	public TablaAmortizacion(int montoInicial,double tasaInteres, float pagoMensual, Credito tabla) {
 		super();
 		this.montoInicial = montoInicial;
 		this.tasaInteres = tasaInteres;
@@ -61,7 +64,7 @@ public class TablaAmortizacion implements Serializable {
 	public double getPagoMensual() {
 		return pagoMensual;
 	}
-	public void setPagoMensual(double pagoMensual) {
+	public void setPagoMensual(float pagoMensual) {
 		this.pagoMensual = pagoMensual;
 	}
 	public Credito getTabla() {
@@ -90,6 +93,20 @@ public class TablaAmortizacion implements Serializable {
 			return false;
 		return true;
 	}
+	
+	
+	public boolean isEditable() {
+		return editable;
+	}
+
+
+
+	public void setEditable(boolean editable) {
+		this.editable = editable;
+	}
+
+
+
 	@Override
 	public String toString() {
 		return "TablaAmortizacion [id=" + id + ", montoInicial=" + montoInicial + ", tasaInteres=" + tasaInteres

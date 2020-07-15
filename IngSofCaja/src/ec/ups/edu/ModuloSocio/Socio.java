@@ -30,7 +30,9 @@ public class Socio implements Serializable {
 	private EstadoCuenta estadoCuenta;	
 	@OneToOne(cascade = CascadeType.ALL,mappedBy = "cuentaAhorroSocio")
 	private CuentaAhorro socio;
-	
+
+	@Transient
+	private boolean editable;
 	public Socio() {
 		
 	}	
@@ -154,6 +156,16 @@ public class Socio implements Serializable {
 		if (id != other.id)
 			return false;
 		return true;
+	}
+
+
+	public boolean isEditable() {
+		return editable;
+	}
+
+
+	public void setEditable(boolean editable) {
+		this.editable = editable;
 	}
 
 

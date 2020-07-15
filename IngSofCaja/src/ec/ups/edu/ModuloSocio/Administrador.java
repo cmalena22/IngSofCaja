@@ -1,6 +1,6 @@
 package ec.ups.edu.ModuloSocio;
 
-
+//
 import java.io.Serializable;
 import javax.persistence.*;
 
@@ -23,7 +23,9 @@ public class Administrador implements Serializable {
 	private String cedula;
 	private String correo;
 	private String contrasena;
-	
+
+	@Transient
+	private boolean editable;
 	public Administrador() {
 		super();
 	}
@@ -124,6 +126,18 @@ public class Administrador implements Serializable {
 		if (id != other.id)
 			return false;
 		return true;
+	}
+
+
+
+	public boolean isEditable() {
+		return editable;
+	}
+
+
+
+	public void setEditable(boolean editable) {
+		this.editable = editable;
 	}
 
 

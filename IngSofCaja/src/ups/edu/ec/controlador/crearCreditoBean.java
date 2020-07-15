@@ -13,8 +13,9 @@ import javax.inject.Named;
 import ec.ups.edu.ModuloTrasaccion.Credito;
 import ec.ups.edu.ModuloTrasaccion.CuentaAhorro;
 import ec.ups.edu.ModuloTrasaccion.Cuota;
+import ec.ups.edu.ModuloTrasaccion.TablaAmortizacion;
 import ups.edu.ec.ejb.CreditoFacade;
-import ups.edu.ec.ejb.CuentaAhorroFacade;
+import ups.edu.ec.ejb.TablaAmortizacionFacade;
 
 @FacesConfig(version = FacesConfig.Version.JSF_2_3)
 @Named
@@ -23,6 +24,8 @@ public class crearCreditoBean implements Serializable{
 	private static final long serialVersionUID = 1L;
 	@EJB
 	private CreditoFacade ejbCreditoFacade;
+	@EJB
+	private TablaAmortizacionFacade ejbTablaFacade;
 	private String nombreRecomienda;
 	private String cedulaRecomienda;
 	private String bancoRecomendado;
@@ -33,7 +36,9 @@ public class crearCreditoBean implements Serializable{
 	private double tasaInteres;
 	private float pagoMensual;
 	private int meses;
-	private List<Float>listaCuota;
+	private List<TablaAmortizacion>listaTabla;
+	private TablaAmortizacion tabla;
+	private Credito credito;
 	public crearCreditoBean() {
 	
 	}
@@ -41,11 +46,21 @@ public class crearCreditoBean implements Serializable{
 	@PostConstruct
 	public void init() {		
 		listaCredito = ejbCreditoFacade.findAll();
-		listaCuota= new ArrayList<Float>();
+		listaTabla= new ArrayList<TablaAmortizacion>();
+		this.tabla=new TablaAmortizacion();
+		this.credito= new Credito();
 	}
 		
 	public int getMontoInicial() {
 		return montoInicial;
+	}
+
+	public Credito getCredito() {
+		return credito;
+	}
+
+	public void setCredito(Credito credito) {
+		this.credito = credito;
 	}
 
 	public void setMontoInicial(int montoInicial) {
@@ -121,17 +136,60 @@ public class crearCreditoBean implements Serializable{
 		this.cuentaAhorro = cuentaAhorro;
 	}
 	
-	 public String add() {
-		 System.out.println("nombre recomienta"+this.nombreRecomienda);
-		 System.out.println("cedula Recomienda"+this.cedulaRecomienda);
-		 System.out.println("banco recomienda"+this.bancoRecomendado);
-		 System.out.println("motivo"+this.motivo);
-		 System.out.println("cuenta ahorro"+this.cuentaAhorro);
-		//	ejbCuentaAhorroFacade.create(new CuentaAhorro(this.numCuenta,this.saldoCuenta,this.capital,recu()));
-			return null;
-			
+	public List<TablaAmortizacion> getListaTabla() {
+		return listaTabla;
+	}
+
+	public void setListaTabla(List<TablaAmortizacion> listaTabla) {
+		this.listaTabla = listaTabla;
+	}
+
+	public TablaAmortizacion getTabla() {
+		return tabla;
+	}
+
+	public void setTabla(TablaAmortizacion tabla) {
+		this.tabla = tabla;
+	}
+
+		public String add() {
+		 credito.setBancoRecomendado(this.bancoRecomendado);
+		 credito.setCedulaRecomienda(this.cedulaRecomienda);
+		 credito.setMotivo(this.motivo);
+		 credito.setNombreRecomienda(this.nombreRecomienda);
+		 credito.setCredito(cuent());
+		 System.out.println("Credito");
+		 System.out.println(credito.toString());
+		 ejbCreditoFacade.create(credito);
+		
+		 float totalinteres=(float) ((this.tasaInteres*this.montoInicial)/100);
+			System.out.println("interes"+totalinteres);		
+			float totalcuota=(this.montoInicial/this.meses);
+			System.out.println("Cuota divido por mes"+totalcuota);
+			pagoMensual=totalinteres+totalcuota;
+			Cuota cuo= new Cuota();
+			System.out.println("PAgo mensaul"+pagoMensual);
+			for (int i = 0; i < this.meses; i++) {
+				tabla.setId(i);
+				tabla.setPagoMensual(pagoMensual);		
+				tabla.setMontoInicial(this.montoInicial);
+				tabla.setTasaInteres(this.tasaInteres);
+				tabla.setTabla(credito);
+				ejbTablaFacade.create(tabla);
+				System.out.println("lista de coutas");
+				System.out.println(tabla+"\n");
+			}
+		 return null;		
 	}
 	
+	public CuentaAhorro  cuent() {
+		CuentaAhorro cu= new CuentaAhorro();
+		 cu=ejbCreditoFacade.nombreCuenta(cuentaAhorro);
+		 System.out.println("Recupere");
+		 System.out.println(cu.toString());
+		 return cu;		
+	}
+		
 	public String tabla() {
 		System.out.println("Monto Inicial"+this.montoInicial);
 		System.out.println("Tasa Interes"+this.tasaInteres);
@@ -142,17 +200,18 @@ public class crearCreditoBean implements Serializable{
 	}
 	public float interes() {
 		float totalinteres=(float) ((this.tasaInteres*this.montoInicial)/100);
-		System.out.println("interes"+totalinteres);
-		
+		System.out.println("interes"+totalinteres);		
 		float totalcuota=(this.montoInicial/this.meses);
 		System.out.println("Cuota divido por mes"+totalcuota);
 		pagoMensual=totalinteres+totalcuota;
 		Cuota cuo= new Cuota();
 		System.out.println("PAgo mensaul"+pagoMensual);
 		for (int i = 0; i < this.meses; i++) {
-			listaCuota.add(pagoMensual);
-			System.out.println("lista de coutas");
-			System.out.println(listaCuota);
+			tabla.setPagoMensual(pagoMensual);		
+			tabla.setMontoInicial(this.montoInicial);
+			tabla.setTasaInteres(this.tasaInteres);
+			System.out.println("lista de\n coutas");
+			System.out.println(tabla+"\n");
 		}
 		return pagoMensual;		
 	}

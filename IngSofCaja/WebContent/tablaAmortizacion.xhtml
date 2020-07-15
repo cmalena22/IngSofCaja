@@ -68,21 +68,21 @@
 				<f:facet name="header">Codigo</f:facet>#{p.id}</h:column>
 			<h:column>
 				<f:facet name="header">Monto inicial</f:facet>
-				<h:inputText value="#{p.montoInicial}" size="10"
+				<h:inputText value="#{p.montoInicial}" size="10" rendered="#{p.editable}" 
 					class="form-control" />
-				<h:outputText value="#{p.montoInicial}" />
+				<h:outputText value="#{p.montoInicial}" rendered="#{not p.editable}"  />
 			</h:column>
 
 			<h:column>
 				<f:facet name="header">Tasa Interes</f:facet>
-				<h:inputText value="#{p.tasaInteres}" size="10" class="form-control" />
-				<h:outputText value="#{p.tasaInteres}" />
+				<h:inputText value="#{p.tasaInteres}" size="10" class="form-control" rendered="#{p.editable}" />
+				<h:outputText value="#{p.tasaInteres}" rendered="#{not p.editable}" />
 			</h:column>
 
 			<h:column>
 				<f:facet name="header">Pago Mensual</f:facet>
-				<h:inputText value="#{p.pagoMensual}" size="10" class="form-control" />
-				<h:outputText value="#{p.pagoMensual}" />
+				<h:inputText value="#{p.pagoMensual}" size="10" class="form-control" rendered="#{p.editable}"  />
+				<h:outputText value="#{p.pagoMensual}" rendered="#{not p.editable}" />
 			</h:column>
 		</h:dataTable>
 		<h:commandLink value="submit" type="submit"

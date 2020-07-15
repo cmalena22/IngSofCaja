@@ -62,21 +62,21 @@
 				<f:facet name="header">Codigo</f:facet>#{p.id}</h:column>
 			<h:column>
 				<f:facet name="header">Nombre Recomienda</f:facet>
-				<h:inputText value="#{p.nombreRecomienda}" size="10"
+				<h:inputText value="#{p.nombreRecomienda}" size="10" rendered="#{p.editable}"
 					class="form-control" />
-				<h:outputText value="{#p.nombreRecomienda}" />
+				<h:outputText value="#{p.nombreRecomienda}" rendered="#{not p.editable}" />
 			</h:column>
 
 			<h:column>
 				<f:facet name="header">Cedula Recomienta</f:facet>
-				<h:inputText value="#{p.cedulaRecomienda}" size="10" class="form-control" />
-				<h:outputText value="#{p.cedulaRecomienda}" />
+				<h:inputText value="#{p.cedulaRecomienda}" size="10" class="form-control" rendered="#{p.editable}"/>
+				<h:outputText value="#{p.cedulaRecomienda}" rendered="#{not p.editable}" />
 			</h:column>
 
 			<h:column>
 				<f:facet name="header">Banco Recomendado</f:facet>
-				<h:inputText value="#{p.bancoRecomendado}" size="10" class="form-control" />
-				<h:outputText value="#{p.bancoRecomendado}" />
+				<h:inputText value="#{p.bancoRecomendado}" size="10" class="form-control" rendered="#{p.editable}"/>
+				<h:outputText value="#{p.bancoRecomendado}" rendered="#{not p.editable}" />
 	
 				</h:column>
 		</h:dataTable>
@@ -96,8 +96,7 @@
 				class="form-control" />
 		</h:selectOneMenu>
 		
-	<h:commandLink value="Confirmar" type="submit"
-			action="#{crearCreditoBean.add}" class="btn btn-danger btn block" />
+	
 		
 	<li>Monto Inicial: <h:inputText size="10"
 				value="#{crearCreditoBean.montoInicial}" /></li>
@@ -107,8 +106,13 @@
 				value="#{crearCreditoBean.pagoMensual}" /></li>
 		<li>Meses: <h:inputText size="10"
 				value="#{crearCreditoBean.meses}" /></li>
-	<h:commandLink value="Calcular Tabla amortizacion" type="submit"
-			action="#{crearCreditoBean.interes}" class="btn btn-danger btn block" />
+				
+	
+	<h:commandLink value="Confirmar" type="submit"
+			action="#{crearCreditoBean.add}" class="btn btn-danger btn block" />		
+	
+	<h:button outcome="tablaAmortizacion.xhtml"> Ver Tabla</h:button>		
+	<!-- Tabla amortizacion -->
 	
 	</h:form>
 

@@ -36,6 +36,8 @@ public class CuentaAhorro implements Serializable {
 	//Mal ojooooooooo revisar
 	private Credito credito;
 	
+	@Transient
+	private boolean editable;
 	
 	
 	
@@ -47,6 +49,26 @@ public class CuentaAhorro implements Serializable {
 	
 	
 	
+
+
+
+
+	public boolean isEditable() {
+		return editable;
+	}
+
+
+
+
+
+
+
+	public void setEditable(boolean editable) {
+		this.editable = editable;
+	}
+
+
+
 
 
 

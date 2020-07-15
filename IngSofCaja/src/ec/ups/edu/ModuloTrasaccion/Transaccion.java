@@ -28,7 +28,9 @@ public class Transaccion implements Serializable {
 	@ManyToOne
 	@JoinColumn
 	private CuentaAhorro transaccion;
-	
+
+	@Transient
+	private boolean editable;
 	
 	
 	@OneToMany(cascade = CascadeType.ALL, mappedBy = "listTransaccion")
@@ -117,6 +119,19 @@ public class Transaccion implements Serializable {
 			return false;
 		return true;
 	}
+	
+	
+	
+	public boolean isEditable() {
+		return editable;
+	}
+
+	public void setEditable(boolean editable) {
+		this.editable = editable;
+	}
+
+
+
 	@Override
 	public String toString() {
 		return "Transaccion [id=" + id + ", fecha=" + fecha + ", monto=" + monto + ", direccion=" + direccion

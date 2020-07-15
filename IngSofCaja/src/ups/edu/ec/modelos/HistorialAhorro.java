@@ -28,7 +28,9 @@ public class HistorialAhorro implements Serializable {
 	@ManyToOne
 	@JoinColumn
 	private CuentaAhorro cuentaAhorro;
-	
+
+	@Transient
+	private boolean editable;
 	
 	private static final long serialVersionUID = 1L;
 
@@ -120,6 +122,24 @@ public class HistorialAhorro implements Serializable {
 		if (id != other.id)
 			return false;
 		return true;
+	}
+
+
+
+
+
+
+	public boolean isEditable() {
+		return editable;
+	}
+
+
+
+
+
+
+	public void setEditable(boolean editable) {
+		this.editable = editable;
 	}
 
 

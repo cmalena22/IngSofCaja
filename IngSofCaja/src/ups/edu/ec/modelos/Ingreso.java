@@ -30,6 +30,10 @@ public class Ingreso implements Serializable {
 	@ManyToOne
 	@JoinColumn
 	private Transaccion listTransaccion;
+	
+
+	@Transient
+	private boolean editable;
 	public Ingreso() {
 	
 	}
@@ -108,6 +112,17 @@ public class Ingreso implements Serializable {
 			return false;
 		return true;
 	}
+	
+	  
+	
+	public boolean isEditable() {
+		return editable;
+	}
+
+	public void setEditable(boolean editable) {
+		this.editable = editable;
+	}
+
 	@Override
 	public String toString() {
 		return "Ingreso [id=" + id + ", montoInicial=" + montoInicial + ", fechas=" + fechas + ", interesMora="

@@ -91,15 +91,19 @@
 				value="#{transaccionBean.monto}" /></li>
 		<li>Direccion: <h:inputText size="10"
 				value="#{transaccionBean.direccion}" /></li>
-		<li>Tipo Transaccion: <h:inputText size="10"
-				value="#{transaccionBean.tipoTransaccion}" /></li>
+		<li>Tipo Transaccion: 
+		<h:selectOneMenu  value="#{transaccionBean.tipoTransaccion}">
+				<f:selectItem itemValue="Deposito" itemLabel="Deposito" />
+				<f:selectItem itemValue="Retiro" itemLabel="Retiro" />
 				
-		
+			</h:selectOneMenu >		
+			</li>
+		<p>Numero de Cuenta</p>
+		<h:selectOneMenu value="#{transaccionBean.cuentaAhorro}" >
+			<f:selectItems value="#{crearCuentaBean.listaCuenta}" class="form-control" />
+		</h:selectOneMenu>
 		<h:commandLink value="submit" type="submit"
 			action="#{transaccionBean.add()}" class="btn btn-danger btn block" />
-	
 	</h:form>
-
-
 </h:body>
 </html>

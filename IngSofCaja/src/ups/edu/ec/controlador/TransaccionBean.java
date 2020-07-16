@@ -14,6 +14,7 @@ import javax.inject.Named;
 import ec.ups.edu.ModuloTrasaccion.CuentaAhorro;
 import ec.ups.edu.ModuloSocio.Socio;
 import ec.ups.edu.ModuloTrasaccion.Transaccion;
+import ups.edu.ec.ejb.CuentaAhorroFacade;
 import ups.edu.ec.ejb.HistorialAhorroFacade;
 import ups.edu.ec.ejb.TransaccionFacade;
 import ups.edu.ec.modelos.HistorialAhorro;
@@ -25,6 +26,8 @@ public class TransaccionBean implements Serializable{
 	@EJB
 	private TransaccionFacade ejbTransaccionFacade;
 	private HistorialAhorroFacade ejbHistorialFacade;
+	@EJB
+	private CuentaAhorroFacade ejbCuentaFacade;
 	private String fecha;
 	private double monto;
 	private String direccion;
@@ -40,6 +43,14 @@ public class TransaccionBean implements Serializable{
 	@PostConstruct
 	public void init() {
 		listaTransaccion = ejbTransaccionFacade.findAll();
+	}
+
+	public CuentaAhorroFacade getEjbCuentaFacade() {
+		return ejbCuentaFacade;
+	}
+
+	public void setEjbCuentaFacade(CuentaAhorroFacade ejbCuentaFacade) {
+		this.ejbCuentaFacade = ejbCuentaFacade;
 	}
 
 	public HistorialAhorroFacade getEjbHistorialFacade() {
@@ -115,8 +126,38 @@ public class TransaccionBean implements Serializable{
 		System.out.println("direccion"+this.direccion);
 		System.out.println("tipo Transaccion"+this.tipoTransaccion);
 		System.out.println("xuebta"+this.CuentaAhorro);
+		System.out.println("Cuentaaaaaaaaaaaa");
+		if (tipoTransaccion.equalsIgnoreCase("deposito")) {
+			System.out.println("deposiiiitoooooooooo");
+			System.out.println(cuentaAhorro().getSaldoCuenta()+this.monto);
+			CuentaAhorro cc=ejbCuentaFacade.find(cuentaAhorro().getId());
+			cc.setSaldoCuenta(cuentaAhorro().getSaldoCuenta()+this.monto);
+			ejbCuentaFacade.edit(cc);		
+			System.out.println("Saldo");
+			System.out.println(cc.getSaldoCuenta());
+			ejbTransaccionFacade.create(new Transaccion(this.fecha,this.monto,this.direccion,this.tipoTransaccion,cuentaAhorro()));
+			
+		}else
+		{
+			System.out.println("Retirrrrrrrrooooooooooooo");
+			if (this.monto<=cuentaAhorro().getSaldoCuenta()) {
+				System.out.println(cuentaAhorro().getSaldoCuenta()-this.monto);
+				CuentaAhorro cc=ejbCuentaFacade.find(cuentaAhorro().getId());
+				cc.setSaldoCuenta(cuentaAhorro().getSaldoCuenta()-this.monto);
+				ejbCuentaFacade.edit(cc);		
+				System.out.println("Saldo");
+				System.out.println(cc.getSaldoCuenta());
+				System.out.println("retiro");
+				ejbTransaccionFacade.create(new Transaccion(this.fecha,this.monto,this.direccion,this.tipoTransaccion,cuentaAhorro()));
+				
+			}else
+				{
+				System.out.println("No tiene saldo");
+				}
+			
+		}
 		
-		//ejbTransaccionFacade.create(new Transaccion(this.fecha,this.monto,this.direccion,this.tipoTransaccion,cuentaAhorro()));
+		
 		return null;
 		
 	}
@@ -127,6 +168,7 @@ return CuentaAhorro;
 	}
 	public CuentaAhorro cuentaAhorro() {
 		CuentaAhorro cuen= new CuentaAhorro();
+		cuen=ejbTransaccionFacade.nombreCuenta(CuentaAhorro);
 		System.out.println(cuen);
 		return cuen;
 		

@@ -37,4 +37,17 @@ public class TransaccionFacade extends AbstractFacade<Transaccion>{
 		}
 		return cat;
 	}
+	public CuentaAhorro actualizacion(int id, int monto) {
+		CuentaAhorro cat = new CuentaAhorro();
+		try {
+			String sql = "UPDATE CuentaAhorro C SET C.saldoCuenta="+ monto +" WHERE C.id=" +id;
+			System.out.println(sql);
+			Query query = em.createQuery(sql);
+			cat = (CuentaAhorro) query.getSingleResult();
+
+		} catch (Exception e) {
+			System.out.println("cuenta" + e.getMessage());
+		}
+		return cat;
+	}
 }

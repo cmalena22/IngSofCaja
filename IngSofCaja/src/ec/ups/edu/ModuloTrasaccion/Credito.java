@@ -177,7 +177,7 @@ public class Credito implements Serializable {
 		return "Credito [id=" + id + ", nombreRecomienda=" + nombreRecomienda + ", cedulaRecomienda=" + cedulaRecomienda
 				+ ", bancoRecomendado=" + bancoRecomendado + ", motivo=" + motivo + ", credito=" + credito;
 	}
-
+	
 
 
 	

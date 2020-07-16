@@ -89,8 +89,7 @@ public class CrearCuentaBean implements Serializable{
 	 }	
 	 public Socio recu () {
 		Socio so= new Socio();
-		String nombre=so.getNombre();
-		so=ejbCuentaAhorroFacade.nombreSocio(nombre);
+		so=ejbCuentaAhorroFacade.nombreSocio(socio);
 		System.out.println(so);
 		return so;
 	 }

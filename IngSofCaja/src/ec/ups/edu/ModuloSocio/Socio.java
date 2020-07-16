@@ -171,10 +171,7 @@ public class Socio implements Serializable {
 
 	@Override
 	public String toString() {
-		return "Socio [id=" + id + ", nombre=" + nombre + ", apellido=" + apellido + ", telefono=" + telefono
-				+ ", cedula=" + cedula + ", salario=" + salario + ", perfil=" + perfil + ", trabajo=" + trabajo
-				+ ", estadoCuenta=" + estadoCuenta + ", socio=" + socio + "]";
-	}
+		return nombre;}
 
 
 

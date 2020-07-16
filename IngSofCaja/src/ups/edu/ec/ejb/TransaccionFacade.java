@@ -24,7 +24,7 @@ public class TransaccionFacade extends AbstractFacade<Transaccion>{
 		// TODO Auto-generated method stub
 		return em;
 	}
-	public CuentaAhorro nombreSocio(String cuenta) {
+	public CuentaAhorro nombreCuenta(String cuenta) {
 		CuentaAhorro cat = new CuentaAhorro();
 		try {
 			String sql = "SELECT c FROM CuentaAhorro c where c.numCuenta='" + cuenta + "'";

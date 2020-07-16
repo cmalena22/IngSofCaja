@@ -79,6 +79,8 @@
 				<h:outputText value="#{p.bancoRecomendado}" rendered="#{not p.editable}" />
 	
 				</h:column>
+		<h:button outcome="tablaAmortizacion.xhtml?credito=#{p.id}"> Ver Tabla</h:button>		
+	
 		</h:dataTable>
 		
 		<li>Nombre Recomienda: <h:inputText size="10"
@@ -111,7 +113,6 @@
 	<h:commandLink value="Confirmar" type="submit"
 			action="#{crearCreditoBean.add}" class="btn btn-danger btn block" />		
 	
-	<h:button outcome="tablaAmortizacion.xhtml"> Ver Tabla</h:button>		
 	<!-- Tabla amortizacion -->
 	
 	</h:form>

@@ -116,29 +116,20 @@ public class TransaccionBean implements Serializable{
 		System.out.println("tipo Transaccion"+this.tipoTransaccion);
 		System.out.println("xuebta"+this.CuentaAhorro);
 		
-		ejbTransaccionFacade.create(new Transaccion(this.fecha,this.monto,this.direccion,this.tipoTransaccion,cuentaAhorro()));
+		//ejbTransaccionFacade.create(new Transaccion(this.fecha,this.monto,this.direccion,this.tipoTransaccion,cuentaAhorro()));
 		return null;
 		
 	}
+	public String ahorro() {
+		System.out.println("Hola");
+System.out.println(CuentaAhorro);
+return CuentaAhorro;		
+	}
 	public CuentaAhorro cuentaAhorro() {
 		CuentaAhorro cuen= new CuentaAhorro();
-		cuen=ejbTransaccionFacade.nombreSocio(CuentaAhorro);
 		System.out.println(cuen);
 		return cuen;
 		
 	}
-	private String addHistorial() {
-		ejbHistorialFacade.create(new HistorialAhorro(getFechaActual(), cuentaAhorro()));
-		System.out.println("ingrese");
-		return null;
-	}
-	public static String getFechaActual() {
-	    Date ahora = new Date();
-	    SimpleDateFormat formateador = new SimpleDateFormat("dd-MM-yyyy");
-	    System.out.println(formateador.format(ahora));
-	    
-	    return formateador.format(ahora);
-	}
-	
 	
 }

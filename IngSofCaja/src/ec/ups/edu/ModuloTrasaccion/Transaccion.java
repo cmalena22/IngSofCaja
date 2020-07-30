@@ -28,10 +28,14 @@ public class Transaccion implements Serializable {
 	@ManyToOne
 	@JoinColumn
 	private CuentaAhorro transaccion;
+
+	@Transient
+	private boolean editable;
 	
-	@ManyToOne
-	@JoinColumn
-	private Ingreso listTransaccion;
+	
+	@OneToMany(cascade = CascadeType.ALL, mappedBy = "listTransaccion")
+	private List<Ingreso>listTransaccion;
+	
 	
 	public Transaccion() {
 	
@@ -87,12 +91,14 @@ public class Transaccion implements Serializable {
 	public void setTransaccion(CuentaAhorro transaccion) {
 		this.transaccion = transaccion;
 	}
-	public Ingreso getListTransaccion() {
+	
+	public List<Ingreso> getListTransaccion() {
 		return listTransaccion;
 	}
-	public void setListTransaccion(Ingreso listTransaccion) {
+	public void setListTransaccion(List<Ingreso> listTransaccion) {
 		this.listTransaccion = listTransaccion;
 	}
+
 	@Override
 	public int hashCode() {
 		final int prime = 31;
@@ -113,6 +119,19 @@ public class Transaccion implements Serializable {
 			return false;
 		return true;
 	}
+	
+	
+	
+	public boolean isEditable() {
+		return editable;
+	}
+
+	public void setEditable(boolean editable) {
+		this.editable = editable;
+	}
+
+
+
 	@Override
 	public String toString() {
 		return "Transaccion [id=" + id + ", fecha=" + fecha + ", monto=" + monto + ", direccion=" + direccion

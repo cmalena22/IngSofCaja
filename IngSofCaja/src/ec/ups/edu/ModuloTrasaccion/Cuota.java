@@ -22,6 +22,9 @@ public class Cuota implements Serializable {
 	@ManyToOne
 	@JoinColumn
 	private Credito cuota;
+
+	@Transient
+	private boolean editable;
 	public Cuota() {
 	
 	}
@@ -89,6 +92,21 @@ public class Cuota implements Serializable {
 			return false;
 		return true;
 	}
+	
+	
+	
+	public boolean isEditable() {
+		return editable;
+	}
+
+
+
+	public void setEditable(boolean editable) {
+		this.editable = editable;
+	}
+
+
+
 	@Override
 	public String toString() {
 		return "Cuota [id=" + id + ", date=" + date + ", monto=" + monto + ", numcuota=" + numcuota + ", cuota=" + cuota

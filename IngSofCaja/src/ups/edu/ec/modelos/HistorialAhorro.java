@@ -20,13 +20,17 @@ public class HistorialAhorro implements Serializable {
 	private int id;
 	private String date;
 	
-	@OneToOne
+	@OneToOne(cascade = CascadeType.ALL,mappedBy = "historialAhorro")
+	private LibroDiario listHistorialAhorro;
+	
+	
+	
+	@ManyToOne
 	@JoinColumn
-	private LibroDiario historialAhorro;
-	
-	@OneToMany(cascade = CascadeType.ALL,mappedBy = "cuentaAhorro")
-	private List<CuentaAhorro> cuentaAhorro;
-	
+	private CuentaAhorro cuentaAhorro;
+
+	@Transient
+	private boolean editable;
 	
 	private static final long serialVersionUID = 1L;
 
@@ -34,12 +38,33 @@ public class HistorialAhorro implements Serializable {
 	
 	}
 
-	public HistorialAhorro(String date, LibroDiario historialAhorro, List<CuentaAhorro> cuentaAhorro) {
+
+
+	
+
+
+	public HistorialAhorro(String date, CuentaAhorro cuentaAhorro) {
 		super();
 		this.date = date;
-		this.historialAhorro = historialAhorro;
 		this.cuentaAhorro = cuentaAhorro;
 	}
+
+
+
+
+
+
+	public CuentaAhorro getCuentaAhorro() {
+		return cuentaAhorro;
+	}
+
+
+
+	public void setCuentaAhorro(CuentaAhorro cuentaAhorro) {
+		this.cuentaAhorro = cuentaAhorro;
+	}
+
+
 
 	public int getId() {
 		return id;
@@ -59,13 +84,23 @@ public class HistorialAhorro implements Serializable {
 
 
 
-	public LibroDiario getHistorialAhorro() {
-		return historialAhorro;
+	public LibroDiario getListHistorialAhorro() {
+		return listHistorialAhorro;
 	}
 
-	public void setHistorialAhorro(LibroDiario historialAhorro) {
-		this.historialAhorro = historialAhorro;
+
+
+
+
+
+	public void setListHistorialAhorro(LibroDiario listHistorialAhorro) {
+		this.listHistorialAhorro = listHistorialAhorro;
 	}
+
+
+
+
+
 
 	@Override
 	public int hashCode() {
@@ -89,11 +124,36 @@ public class HistorialAhorro implements Serializable {
 		return true;
 	}
 
-	@Override
-	public String toString() {
-		return "HistorialAhorro [id=" + id + ", date=" + date + ", historialAhorro=" + historialAhorro + "]";
+
+
+
+
+
+	public boolean isEditable() {
+		return editable;
 	}
 
+
+
+
+
+
+	public void setEditable(boolean editable) {
+		this.editable = editable;
+	}
+
+
+
+
+
+
+	@Override
+	public String toString() {
+		return "HistorialAhorro [id=" + id + ", date=" + date + ", listHistorialAhorro=" + listHistorialAhorro
+				+ ", cuentaAhorro=" + cuentaAhorro + "]";
+	}
+
+	
 	
 
    

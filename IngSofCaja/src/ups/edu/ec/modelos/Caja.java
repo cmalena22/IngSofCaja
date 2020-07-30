@@ -25,6 +25,9 @@ public class Caja implements Serializable {
 	private List<Egreso>listEgreso;
 	@OneToMany(cascade = CascadeType.ALL,mappedBy = "ingreso")
 	private List<Ingreso>listIngreso;
+
+	@Transient
+	private boolean editable;
 	public Caja() {
 		
 	}
@@ -89,6 +92,21 @@ public class Caja implements Serializable {
 			return false;
 		return true;
 	}
+	
+	
+	
+	public boolean isEditable() {
+		return editable;
+	}
+
+
+
+	public void setEditable(boolean editable) {
+		this.editable = editable;
+	}
+
+
+
 	@Override
 	public String toString() {
 		return "Caja [id=" + id + ", date=" + date + ", caja=" + caja + ", listEgreso=" + listEgreso + ", listIngreso="

@@ -20,82 +20,58 @@
 		integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
 		crossorigin="anonymous"></script>
 		
-	<title>Crear Cuenta</title>
+	<title>Crear Cuentam</title>
 
-	<style>
-.tabla {
-	border-collapse: collapse;
-}
-
-.cabeceraTabla {
-	text-align: center;
-	background: none repeat scroll 0 0 #E5E5E5;
-	border-bottom: 1px solid #BBBBBB;
-	padding: 8px;
-}
-
-.filaPar {
-	text-align: center;
-	background: none repeat scroll 0 0 #FFFFFFF;
-	border-top: 1px solid #BBBBBB;
-}
-
-.filaImpar {
-	text-align: center;
-	background: none repeat scroll 0 0 #F9F9F9;
-	border-top: 1px solid #BBBBBB;
-}
-</style>
-
-
+	
 </h:head>
 <h:body>
 
 
 	<h:form>
-
-		<li>Numero Cuenta: <h:inputText size="10"
-				value="#{crearCuentaBean.numCuenta}" /></li>
-		<li>Saldo Cuenta: <h:inputText size="10"
-				value="#{crearCuentaBean.saldoCuenta}" /></li>
-		<li>Capital: <h:inputText size="10"
-				value="#{crearCuentaBean.capital}" /></li>
-		<li>Socio: <h:inputText size="10"
-				value="#{crearCuentaBean.socio}" /></li>
-		
 		<h:dataTable value="#{crearCuentaBean.listaCuenta}" var="p"
 			styleClass="tabla" headerClass="cabeceraTabla" rowClasses="filaImpar"
 			class="table table-hover">
 			<h:column>
 				<f:facet name="header">Codigo</f:facet>#{p.id}</h:column>
 			<h:column>
-				<f:facet name="header">Fecha</f:facet>
+				<f:facet name="header">Numero de Cuentaa</f:facet>
 				<h:inputText value="#{p.numCuenta}" size="10"
-					class="form-control" />
-				<h:outputText value="#p.numCuenta}" />
+					rendered="#{p.editable}" class="form-control" />
+				<h:outputText value="#{p.numCuenta}" rendered="#{not p.editable}" />
 			</h:column>
 
 			<h:column>
-				<f:facet name="header">Saldo Cuenta</f:facet>
-				<h:inputText value="#{p.saldoCuenta}" size="10" class="form-control" />
-				<h:outputText value="#{p.saldoCuenta}" />
+				<f:facet name="header">Saldo  Cuenta</f:facet>
+				<h:inputText value="#{p.saldoCuenta}" size="10"
+					rendered="#{p.editable}" class="form-control" />
+				<h:outputText value="#{p.saldoCuenta} " rendered="#{not p.editable}" />
 			</h:column>
 
 			<h:column>
 				<f:facet name="header">Capital</f:facet>
-				<h:inputText value="#{p.capital}" size="10" class="form-control" />
-				<h:outputText value="#{p.capital}" />
+				<h:inputText value="#{p.capital}" size="10"
+					rendered="#{p.editable}" class="form-control" />
+				<h:outputText value="#{p.capital} " rendered="#{not p.editable}" />
 			</h:column>
 				<h:column>
 				<f:facet name="header">Socio</f:facet>
-				<h:inputText value="#{p.socio}" size="10" class="form-control" />
-				<h:outputText value="#{p.socio}" />
+			<h:outputText value="#{p.cuentaAhorroSocio.nombre}" />
 			</h:column>
-	
 			
 		</h:dataTable>
+		
+		<li>Numero Cuenta: <h:inputText size="10"
+				value="#{crearCuentaBean.numCuenta}" /></li>
+		<li>Saldo Cuenta: <h:inputText size="10"
+				value="#{crearCuentaBean.saldoCuenta}" /></li>
+		<li>Capital: <h:inputText size="10" 	value="#{crearCuentaBean.capital}" /></li>		
+		<p>Socio</p>
+		<h:selectOneMenu value="#{crearCuentaBean.socio}" >
+			<f:selectItems value="#{socioBean.listaSocio}" class="form-control" />
+		</h:selectOneMenu>
+		
 		<h:commandLink value="submit" type="submit"
-			action="#{crearCuentaBean.process}" class="btn btn-danger btn block" />
+			action="#{crearCuentaBean.add}" class="btn btn-danger btn block" />
 
 	</h:form>
 

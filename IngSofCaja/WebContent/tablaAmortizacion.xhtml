@@ -53,40 +53,12 @@
 
 
 	<h:form>
+	
 
-		<li>Monto Inicial: <h:inputText size="10"
-				value="#{amortizacionBean.montoInicial}" /></li>
-		<li>Tasa Interes: <h:inputText size="10"
-				value="#{amortizacionBean.tasaInteres}" /></li>
+	
 		
-
-
-		<h:dataTable value="#{amortizacionBean.listatabla}" var="p"
-			styleClass="tabla" headerClass="cabeceraTabla" rowClasses="filaImpar"
-			class="table table-hover">
-			<h:column>
-				<f:facet name="header">Codigo</f:facet>#{p.id}</h:column>
-			<h:column>
-				<f:facet name="header">Monto inicial</f:facet>
-				<h:inputText value="#{p.montoInicial}" size="10"
-					class="form-control" />
-				<h:outputText value="#{p.montoInicial}" />
-			</h:column>
-
-			<h:column>
-				<f:facet name="header">Tasa Interes</f:facet>
-				<h:inputText value="#{p.tasaInteres}" size="10" class="form-control" />
-				<h:outputText value="#{p.tasaInteres}" />
-			</h:column>
-
-			<h:column>
-				<f:facet name="header">Pago Mensual</f:facet>
-				<h:inputText value="#{p.pagoMensual}" size="10" class="form-control" />
-				<h:outputText value="#{p.pagoMensual}" />
-			</h:column>
-		</h:dataTable>
 		<h:commandLink value="submit" type="submit"
-			action="#{amortizacionBean.process}" class="btn btn-danger btn block" />
+			action="#{tablaAmortizacionBean.add()}" class="btn btn-danger btn block" />
 
 	</h:form>
 

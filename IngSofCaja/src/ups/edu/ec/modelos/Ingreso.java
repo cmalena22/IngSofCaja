@@ -27,8 +27,13 @@ public class Ingreso implements Serializable {
 	@ManyToOne
 	@JoinColumn
 	private Caja ingreso;
-	@OneToMany(cascade = CascadeType.ALL, mappedBy = "listTransaccion")
-	private List<Transaccion>listTransaccion;
+	@ManyToOne
+	@JoinColumn
+	private Transaccion listTransaccion;
+	
+
+	@Transient
+	private boolean editable;
 	public Ingreso() {
 	
 	}
@@ -78,12 +83,15 @@ public class Ingreso implements Serializable {
 	public void setIngreso(Caja ingreso) {
 		this.ingreso = ingreso;
 	}
-	public List<Transaccion> getListTransaccion() {
+	
+	public Transaccion getListTransaccion() {
 		return listTransaccion;
 	}
-	public void setListTransaccion(List<Transaccion> listTransaccion) {
+
+	public void setListTransaccion(Transaccion listTransaccion) {
 		this.listTransaccion = listTransaccion;
 	}
+
 	@Override
 	public int hashCode() {
 		final int prime = 31;
@@ -104,6 +112,17 @@ public class Ingreso implements Serializable {
 			return false;
 		return true;
 	}
+	
+	  
+	
+	public boolean isEditable() {
+		return editable;
+	}
+
+	public void setEditable(boolean editable) {
+		this.editable = editable;
+	}
+
 	@Override
 	public String toString() {
 		return "Ingreso [id=" + id + ", montoInicial=" + montoInicial + ", fechas=" + fechas + ", interesMora="

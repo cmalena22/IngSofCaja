@@ -27,7 +27,6 @@ public class Socio implements Serializable {
 	private String trabajo;
 	
 	@OneToOne(cascade = CascadeType.ALL, mappedBy = "socio")
-<<<<<<< HEAD
 	private EstadoCuenta estadoCuenta;
 	
 	
@@ -35,14 +34,14 @@ public class Socio implements Serializable {
 	@JoinColumn
 	private CuentaAhorro cuentaAhorro;
 	
-=======
-	private EstadoCuenta estadoCuenta;	
+
+	
 	@OneToOne(cascade = CascadeType.ALL,mappedBy = "cuentaAhorroSocio")
 	private CuentaAhorro socio;
 
 	@Transient
 	private boolean editable;
->>>>>>> branch 'master' of https://github.com/cmalena22/IngSofCaja.git
+
 	public Socio() {
 		
 	}	

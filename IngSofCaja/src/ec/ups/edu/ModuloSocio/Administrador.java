@@ -23,14 +23,11 @@ public class Administrador implements Serializable {
 	private String cedula;
 	private String correo;
 	private String contrasena;
-<<<<<<< HEAD
-	
-	
-=======
+
 
 	@Transient
 	private boolean editable;
->>>>>>> branch 'master' of https://github.com/cmalena22/IngSofCaja.git
+
 	public Administrador() {
 		super();
 	}

@@ -49,10 +49,6 @@ public class CuentaAhorro implements Serializable {
 	
 	
 	
-<<<<<<< HEAD
-	public CuentaAhorro(String numCuenta, double saldoCuenta, int capital) {
-=======
-
 
 
 
@@ -77,17 +73,15 @@ public class CuentaAhorro implements Serializable {
 
 
 	public CuentaAhorro(String numCuenta, double saldoCuenta, int capital, Socio cuentaAhorroSocio) {
->>>>>>> branch 'master' of https://github.com/cmalena22/IngSofCaja.git
+
 		super();
 		this.numCuenta = numCuenta;
 		this.saldoCuenta = saldoCuenta;
 		this.capital = capital;
-<<<<<<< HEAD
-=======
 		this.cuentaAhorroSocio = cuentaAhorroSocio;
 		transaccion = new ArrayList<Transaccion>();
 		cuentaAhorro =new ArrayList<HistorialAhorro>();
->>>>>>> branch 'master' of https://github.com/cmalena22/IngSofCaja.git
+
 	}
 
 

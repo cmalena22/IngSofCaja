@@ -19,7 +19,8 @@ public class EstadoCuenta implements Serializable {
 	private int id;
 	private double saldo;
 	private String fecha;
-	@OneToOne 
+	@OneToOne
+	@JoinColumn
 	private Socio socio;
 	@Transient
 	private boolean editable;
@@ -28,9 +29,6 @@ public class EstadoCuenta implements Serializable {
 		
 	}
 	
-	
-	
-
 	public EstadoCuenta(double saldo, String fecha) {
 		super();
 		this.saldo = saldo;

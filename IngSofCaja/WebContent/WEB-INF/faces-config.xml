@@ -17,5 +17,21 @@
 </navigation-case>
 </navigation-rule>
 
+<navigation-rule>
+	<display-name>ParteAdministrador.xhtml</display-name>
+	<from-view-id>/ParteAdministrador.xhtml</from-view-id>
+	<navigation-case>
+		<from-outcome>ingreSocio</from-outcome>
+		<to-view-id>/ingresarUsuario.xhtml</to-view-id>
+	</navigation-case>
+</navigation-rule>
 
+<navigation-rule>
+	<display-name>ParteAdministrador.xhtml</display-name>
+	<from-view-id>/ParteAdministrador.xhtml</from-view-id>
+	<navigation-case>
+		<from-outcome>ingreLibrodiario</from-outcome>
+		<to-view-id>/LibroDiario.xhtml</to-view-id>
+	</navigation-case>
+</navigation-rule>
 </faces-config>

@@ -24,6 +24,7 @@ public class Administrador implements Serializable {
 	private String correo;
 	private String contrasena;
 	
+	
 	public Administrador() {
 		super();
 	}

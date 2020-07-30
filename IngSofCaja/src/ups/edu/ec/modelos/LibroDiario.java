@@ -30,18 +30,37 @@ public class LibroDiario implements Serializable {
 	@JoinColumn
 	private Caja caja;
 	private String monto;
+	
+	@Transient
+	private boolean editable;
+	
 	public LibroDiario() {
 	
 	}
 	
-	public LibroDiario(String fecha, Caja caja, String monto) {
+	
+
+
+
+	public LibroDiario(int id, String fecha, Caja caja, String monto) {
 		super();
+		this.id = id;
 		this.fecha = fecha;
 		this.caja = caja;
 		this.monto = monto;
 	}
 
 
+
+
+
+	public boolean isEditable() {
+		return editable;
+	}
+
+	public void setEditable(boolean editable) {
+		this.editable = editable;
+	}
 
 	public int getId() {
 		return id;

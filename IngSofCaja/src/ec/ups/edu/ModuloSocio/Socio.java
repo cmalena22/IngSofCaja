@@ -29,6 +29,7 @@ public class Socio implements Serializable {
 	@OneToOne(cascade = CascadeType.ALL, mappedBy = "socio")
 	private EstadoCuenta estadoCuenta;
 	
+	
 	@OneToOne
 	@JoinColumn
 	private CuentaAhorro cuentaAhorro;

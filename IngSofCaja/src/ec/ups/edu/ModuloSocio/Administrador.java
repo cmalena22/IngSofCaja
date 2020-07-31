@@ -12,7 +12,7 @@ import javax.persistence.*;
 
 public class Administrador implements Serializable {
 
-	
+	//Prueba
 	private static final long serialVersionUID = 1L;
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)

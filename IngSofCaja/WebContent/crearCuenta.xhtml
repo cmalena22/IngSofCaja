@@ -20,12 +20,31 @@
 		integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
 		crossorigin="anonymous"></script>
 		
-	<title>Crear Cuentam</title>
+	<title>Crear Cuenta</title>
 
 	
 </h:head>
 <h:body>
+<h3 class="row justify-content-center align-items-center">Registro de Cuenta</h3>
+	<header>
+        <h:form>
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <a class="navbar-brand" href="#">Cuenta</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
 
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+          <a href="ParteAdministrador.xhtml">Regresar</a>
+      </li>
+    </ul>
+    </div>
+</nav>
+        </h:form>
+    </header>
+	
 
 	<h:form>
 		<h:dataTable value="#{crearCuentaBean.listaCuenta}" var="p"

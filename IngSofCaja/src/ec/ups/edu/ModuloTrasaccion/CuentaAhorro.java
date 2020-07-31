@@ -46,12 +46,11 @@ public class CuentaAhorro implements Serializable {
 	
 	
 	
-	public CuentaAhorro(String numCuenta, double saldoCuenta, int capital, boolean editable, Socio socio) {
+	public CuentaAhorro(String numCuenta, double saldoCuenta, int capital, Socio socio) {
 		super();
 		this.numCuenta = numCuenta;
 		this.saldoCuenta = saldoCuenta;
 		this.capital = capital;
-		this.editable = editable;
 		this.socio = socio;
 	}
 

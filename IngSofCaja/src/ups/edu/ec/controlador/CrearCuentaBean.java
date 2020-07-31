@@ -99,6 +99,7 @@ public class CrearCuentaBean implements Serializable{
 		 System.out.println("Capital"+this.capital);
 		 System.out.println("socio"+this.socio);
 			ejbCuentaAhorroFacade.create(new CuentaAhorro(this.numCuenta,this.saldoCuenta,this.capital,recu()));
+			listaCuenta = ejbCuentaAhorroFacade.findAll();
 			return null;
 			
 		}

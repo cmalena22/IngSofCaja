@@ -21,13 +21,8 @@
 	<display-name>ParteAdministrador.xhtml</display-name>
 	<from-view-id>/ParteAdministrador.xhtml</from-view-id>
 	<navigation-case>
-<<<<<<< HEAD
-		<from-outcome>ingreSocio</from-outcome>
-		<to-view-id>/crearSocio.xhtml</to-view-id>
-=======
 		<from-outcome>ingreLibrodiario</from-outcome>
 		<to-view-id>/LibroDiario.xhtml</to-view-id>
->>>>>>> branch 'master' of https://github.com/cmalena22/IngSofCaja.git
 	</navigation-case>
 </navigation-rule>
 <navigation-rule>
@@ -86,15 +81,9 @@
 		<to-view-id>/LibroDiario.xhtml</to-view-id>
 	</navigation-case>
 </navigation-rule>
-<<<<<<< HEAD
 
-<navigation-rule>
-	<display-name>ParteAdministrador.xhtml</display-name>
-	<from-view-id>/ParteAdministrador.xhtml</from-view-id>
-	<navigation-case>
-		<from-outcome>ingreCuenta</from-outcome>
-		<to-view-id>/crearCuenta.xhtml</to-view-id>
-=======
+
+
 <navigation-rule>
 	<display-name>LibroDiarioxhtml</display-name>
 	<from-view-id>/LibroDiario.xhtml</from-view-id>
@@ -189,7 +178,7 @@
 	<navigation-case>
 		<from-outcome>cuentaTran</from-outcome>
 		<to-view-id>/transaccion.xhtml</to-view-id>
->>>>>>> branch 'master' of https://github.com/cmalena22/IngSofCaja.git
+
 	</navigation-case>
 </navigation-rule>
 </faces-config>

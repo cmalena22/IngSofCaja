@@ -1,31 +1,35 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <pageflow:Pageflow xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:pageflow="http://www.sybase.com/suade/pageflow" id="pf15937504885410" configfile="/IngSofCaja/WebContent/WEB-INF/faces-config.xml">
-  <nodes xsi:type="pageflow:PFPage" name="Login.xhtml" x="24" y="168" id="pf15937505624641" referenceLink="//@navigationRule.0/@navigationCase.1/@toViewId|" outlinks="pf15937505624643 pf15937506303555" inlinks="pf15937505624643" path="/Login.xhtml"/>
-  <nodes xsi:type="pageflow:PFPage" name="ParteAdministrador.xhtml" x="144" y="180" id="pf15937506303556" referenceLink="//@navigationRule.2/@fromViewId|" outlinks="pf15961337198660 pf15961640049350 pf15961641187602 pf15961645890464" inlinks="pf15937506303555 pf15961650145246 pf159616524040210 pf159616684481014 pf159616712378118" path="/ParteAdministrador.xhtml"/>
-  <nodes xsi:type="pageflow:PFPage" name="LibroDiarioxhtml" x="288" y="336" id="pf15961337198671" referenceLink="//@navigationRule.2/@navigationCase.0/@toViewId|" outlinks="pf159616524040210 pf159616524040211 pf159616524040212 pf159616524040213" inlinks="pf15961337198660 pf15961650145247 pf159616684481015 pf159616712378119" path="/LibroDiario.xhtml"/>
-  <nodes xsi:type="pageflow:PFPage" name="transaccion.xhtml" x="481" y="216" id="pf15961640049361" outlinks="pf159616684481014 pf159616684481015 pf159616684481016 pf159616684481017" inlinks="pf15961640049350 pf15961650145248 pf159616524040211 pf159616712378120" path="/transaccion.xhtml"/>
-  <nodes xsi:type="pageflow:PFPage" name="crearCuenta.xhtml" x="648" y="84" id="pf15961641187603" outlinks="pf159616712378118 pf159616712378119 pf159616712378121 pf159616712378120" inlinks="pf15961641187602 pf15961650145249 pf159616524040212 pf159616684481016" path="/crearCuenta.xhtml"/>
-  <nodes xsi:type="pageflow:PFPage" name="crearSocio.xhtml" x="372" y="-36" id="pf15961645890465" outlinks="pf15961650145246 pf15961650145249 pf15961650145248 pf15961650145247" inlinks="pf15961645890464 pf159616524040213 pf159616684481017 pf159616712378121" path="/crearSocio.xhtml"/>
-  <links id="pf15937505624643" target="pf15937505624641" source="pf15937505624641" outcome="fallo"/>
+  <nodes xsi:type="pageflow:PFPage" name="Login.xhtml" x="122" y="904" id="pf15937505624641" referenceLink="//@navigationRule.0/@navigationCase.1/@toViewId|" outlinks="pf15937505624643 pf15937506303555" inlinks="pf15937505624643" path="/Login.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="ParteAdministrador.xhtml" x="338" y="904" id="pf15937506303556" referenceLink="//@navigationRule.17/@navigationCase.0/@toViewId|" outlinks="pf15961640049350 pf15961641187602 pf15961580341432 pf15961580341434" inlinks="pf15937506303555 pf15961650145246 pf15961580848275 pf15961580848276 pf15961580848277" path="/ParteAdministrador.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="LibroDiarioxhtml" x="770" y="178" id="pf15961337198671" referenceLink="//@navigationRule.18/@navigationCase.0/@toViewId|" outlinks="pf15961580848275 pf15961580848278 pf15961580848279 pf159615808482710" inlinks="pf15961650145247 pf15961580341434 pf159615808482711 pf159615808482712" path="/LibroDiario.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="transaccion.xhtml" x="770" y="562" id="pf15961640049361" referenceLink="//@navigationRule.20/@navigationCase.0/@toViewId|" outlinks="pf15961580848276 pf159615808482711 pf159615808482713 pf159615808482714" inlinks="pf15961640049350 pf15961650145248 pf15961580848278 pf159615808482715" path="/transaccion.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="crearCuenta.xhtml" x="770" y="946" id="pf15961641187603" referenceLink="//@navigationRule.20/@fromViewId|" outlinks="pf15961580848277 pf159615808482712 pf159615808482716 pf159615808482715" inlinks="pf15961641187602 pf15961650145249 pf15961580848279 pf159615808482713" path="/crearCuenta.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="crearSocio.xhtml" x="554" y="702" id="pf15961645890465" referenceLink="//@navigationRule.19/@navigationCase.0/@toViewId|" outlinks="pf15961650145246 pf15961650145249 pf15961650145248 pf15961650145247" inlinks="pf15961580341432 pf159615808482710 pf159615808482714 pf159615808482716" path="/crearSocio.xhtml"/>
   <links id="pf15937506303555" target="pf15937506303556" source="pf15937505624641" outcome="exito"/>
-  <links id="pf15961337198660" target="pf15961337198671" source="pf15937506303556" outcome="ingreLibrodiario"/>
   <links id="pf15961640049350" target="pf15961640049361" source="pf15937506303556" outcome="admTran"/>
   <links id="pf15961641187602" target="pf15961641187603" source="pf15937506303556" outcome="admCrearCuenta"/>
-  <links id="pf15961645890464" target="pf15961645890465" source="pf15937506303556" outcome="ingreSocio"/>
   <links id="pf15961650145246" target="pf15937506303556" source="pf15961645890465" outcome="socioAdm"/>
   <links id="pf15961650145249" target="pf15961641187603" source="pf15961645890465" outcome="socioCuen"/>
   <links id="pf15961650145248" target="pf15961640049361" source="pf15961645890465" outcome="socioTran"/>
   <links id="pf15961650145247" target="pf15961337198671" source="pf15961645890465" outcome="socioLibro"/>
-  <links id="pf159616524040210" target="pf15937506303556" source="pf15961337198671" outcome="libroAdm"/>
-  <links id="pf159616524040211" target="pf15961640049361" source="pf15961337198671" outcome="libroTran"/>
-  <links id="pf159616524040212" target="pf15961641187603" source="pf15961337198671" outcome="libroCuenta"/>
-  <links id="pf159616524040213" target="pf15961645890465" source="pf15961337198671" outcome="libroSocio"/>
-  <links id="pf159616684481014" target="pf15937506303556" source="pf15961640049361" outcome="tranAdm"/>
-  <links id="pf159616684481015" target="pf15961337198671" source="pf15961640049361" outcome="tranLibro"/>
-  <links id="pf159616684481016" target="pf15961641187603" source="pf15961640049361" outcome="tranCuenta"/>
-  <links id="pf159616684481017" target="pf15961645890465" source="pf15961640049361" outcome="tranSocio"/>
-  <links id="pf159616712378118" target="pf15937506303556" source="pf15961641187603" outcome="cuenAdm"/>
-  <links id="pf159616712378119" target="pf15961337198671" source="pf15961641187603" outcome="cuentaLibro"/>
-  <links id="pf159616712378121" target="pf15961645890465" source="pf15961641187603" outcome="cuentaSocio"/>
-  <links id="pf159616712378120" target="pf15961640049361" source="pf15961641187603" outcome="cuentaTran"/>
+  <links id="pf15961580341432" target="pf15961645890465" source="pf15937506303556" outcome="ingreSocio"/>
+  <links id="pf15937505624643" target="pf15937505624641" source="pf15937505624641" outcome="fallo">
+    <bendPoints d1Height="-36" d2Height="-36"/>
+    <bendPoints d1Width="-64" d1Height="-36" d2Width="-64" d2Height="-36"/>
+    <bendPoints d1Width="-64" d2Width="-64"/>
+  </links>
+  <links id="pf15961580341434" target="pf15961337198671" source="pf15937506303556" outcome="ingreLibrodiario"/>
+  <links id="pf15961580848275" target="pf15937506303556" source="pf15961337198671" outcome="libroAdm"/>
+  <links id="pf15961580848278" target="pf15961640049361" source="pf15961337198671" outcome="libroTran"/>
+  <links id="pf15961580848279" target="pf15961641187603" source="pf15961337198671" outcome="libroCuenta"/>
+  <links id="pf159615808482710" target="pf15961645890465" source="pf15961337198671" outcome="libroSocio"/>
+  <links id="pf15961580848276" target="pf15937506303556" source="pf15961640049361" outcome="tranAdm"/>
+  <links id="pf159615808482711" target="pf15961337198671" source="pf15961640049361" outcome="tranLibro"/>
+  <links id="pf159615808482713" target="pf15961641187603" source="pf15961640049361" outcome="tranCuenta"/>
+  <links id="pf159615808482714" target="pf15961645890465" source="pf15961640049361" outcome="tranSocio"/>
+  <links id="pf15961580848277" target="pf15937506303556" source="pf15961641187603" outcome="cuenAdm"/>
+  <links id="pf159615808482712" target="pf15961337198671" source="pf15961641187603" outcome="cuentaLibro"/>
+  <links id="pf159615808482716" target="pf15961645890465" source="pf15961641187603" outcome="cuentaSocio"/>
+  <links id="pf159615808482715" target="pf15961640049361" source="pf15961641187603" outcome="cuentaTran"/>
 </pageflow:Pageflow>

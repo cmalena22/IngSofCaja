@@ -24,10 +24,10 @@ public class Transaccion implements Serializable {
 	private double monto;
 	private String direccion;
 	private String tipoTransaccion;
-	
+	//Bien
 	@ManyToOne
 	@JoinColumn
-	private CuentaAhorro transaccion;
+	private CuentaAhorro cuentaAhorro;
 
 	@Transient
 	private boolean editable;
@@ -49,7 +49,7 @@ public class Transaccion implements Serializable {
 		this.monto = monto;
 		this.direccion = direccion;
 		this.tipoTransaccion = tipoTransaccion;
-		this.transaccion = transaccion;
+		this.cuentaAhorro = transaccion;
 	}
 
 
@@ -85,13 +85,19 @@ public class Transaccion implements Serializable {
 		this.tipoTransaccion = tipoTransaccion;
 	}
 	
-	public CuentaAhorro getTransaccion() {
-		return transaccion;
-	}
-	public void setTransaccion(CuentaAhorro transaccion) {
-		this.transaccion = transaccion;
-	}
 	
+	public CuentaAhorro getCuentaAhorro() {
+		return cuentaAhorro;
+	}
+
+
+
+	public void setCuentaAhorro(CuentaAhorro cuentaAhorro) {
+		this.cuentaAhorro = cuentaAhorro;
+	}
+
+
+
 	public List<Ingreso> getListTransaccion() {
 		return listTransaccion;
 	}
@@ -135,9 +141,11 @@ public class Transaccion implements Serializable {
 	@Override
 	public String toString() {
 		return "Transaccion [id=" + id + ", fecha=" + fecha + ", monto=" + monto + ", direccion=" + direccion
-				+ ", tipoTransaccion=" + tipoTransaccion + ", transaccion=" + transaccion + ", listTransaccion="
-				+ listTransaccion + "]";
+				+ ", tipoTransaccion=" + tipoTransaccion + ", cuentaAhorro=" + cuentaAhorro + ", editable=" + editable
+				+ ", listTransaccion=" + listTransaccion + "]";
 	}
-	
+
+
+
    
 }

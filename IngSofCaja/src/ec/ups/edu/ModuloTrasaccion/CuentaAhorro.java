@@ -26,67 +26,34 @@ public class CuentaAhorro implements Serializable {
 	private double saldoCuenta;
 	private int capital;
 	
-	@OneToOne
-	@JoinColumn
-	private Socio cuentaAhorroSocio;
-	@OneToMany(cascade = CascadeType.ALL,mappedBy = "transaccion")	
-	private List<Transaccion>transaccion;
-	
-	@OneToOne(cascade = CascadeType.ALL, mappedBy = "credito")
-	//Mal ojooooooooo revisar
-	private Credito credito;
-	
 	@Transient
 	private boolean editable;
+	//Bien
+	@OneToOne
+	@JoinColumn
+	private Socio socio;
 	
+	//Bien
 	
+	@OneToOne(cascade = CascadeType.ALL,mappedBy = "credito")
+	private Credito credito;
 	
 	@OneToMany(cascade = CascadeType.ALL,mappedBy = "cuentaAhorro")
-	private List<HistorialAhorro> cuentaAhorro;
+	private List<Transaccion> listaTransaccion;
 	public CuentaAhorro() {
 		
 	}
 	
 	
 	
-
-
-
-	public boolean isEditable() {
-		return editable;
-	}
-
-
-
-
-
-
-
-	public void setEditable(boolean editable) {
-		this.editable = editable;
-	}
-
-
-
-
-
-
-
-	public CuentaAhorro(String numCuenta, double saldoCuenta, int capital, Socio cuentaAhorroSocio) {
-
+	public CuentaAhorro(String numCuenta, double saldoCuenta, int capital, boolean editable, Socio socio) {
 		super();
 		this.numCuenta = numCuenta;
 		this.saldoCuenta = saldoCuenta;
 		this.capital = capital;
-		this.cuentaAhorroSocio = cuentaAhorroSocio;
-		transaccion = new ArrayList<Transaccion>();
-		cuentaAhorro =new ArrayList<HistorialAhorro>();
-
+		this.editable = editable;
+		this.socio = socio;
 	}
-
-
-
-
 
 
 
@@ -114,46 +81,30 @@ public class CuentaAhorro implements Serializable {
 	public void setCapital(int capital) {
 		this.capital = capital;
 	}
-	
-	public Socio getCuentaAhorroSocio() {
-		return cuentaAhorroSocio;
+	public boolean isEditable() {
+		return editable;
 	}
-
-
-
-	public void setCuentaAhorroSocio(Socio cuentaAhorroSocio) {
-		this.cuentaAhorroSocio = cuentaAhorroSocio;
+	public void setEditable(boolean editable) {
+		this.editable = editable;
 	}
-
-
-
-	public List<Transaccion> getTransaccion() {
-		return transaccion;
+	public Socio getSocio() {
+		return socio;
 	}
-	public void setTransaccion(List<Transaccion> transaccion) {
-		this.transaccion = transaccion;
+	public void setSocio(Socio socio) {
+		this.socio = socio;
 	}
-	
 	public Credito getCredito() {
 		return credito;
 	}
 	public void setCredito(Credito credito) {
 		this.credito = credito;
 	}
-	
-	
-	public List<HistorialAhorro> getCuentaAhorro() {
-		return cuentaAhorro;
+	public List<Transaccion> getListaTransaccion() {
+		return listaTransaccion;
 	}
-
-
-
-	public void setCuentaAhorro(List<HistorialAhorro> cuentaAhorro) {
-		this.cuentaAhorro = cuentaAhorro;
+	public void setListaTransaccion(List<Transaccion> listaTransaccion) {
+		this.listaTransaccion = listaTransaccion;
 	}
-
-
-
 	@Override
 	public int hashCode() {
 		final int prime = 31;
@@ -174,13 +125,14 @@ public class CuentaAhorro implements Serializable {
 			return false;
 		return true;
 	}
-
-
-
 	@Override
 	public String toString() {
-		return  numCuenta ;
+		return "CuentaAhorro [id=" + id + ", numCuenta=" + numCuenta + ", saldoCuenta=" + saldoCuenta + ", capital="
+				+ capital + ", editable=" + editable + ", socio=" + socio + ", credito=" + credito
+				+ ", listaTransaccion=" + listaTransaccion + "]";
 	}
+	
+	
 	
 
 }

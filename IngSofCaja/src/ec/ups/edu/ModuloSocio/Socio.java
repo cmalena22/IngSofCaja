@@ -25,18 +25,12 @@ public class Socio implements Serializable {
 	private double salario;
 	private String perfil;
 	private String trabajo;
-	
+	//Bien
 	@OneToOne(cascade = CascadeType.ALL, mappedBy = "socio")
 	private EstadoCuenta estadoCuenta;
 	
-	
-	@OneToOne
-	@JoinColumn
-	private CuentaAhorro cuentaAhorro;
-	
-
-	
-	@OneToOne(cascade = CascadeType.ALL,mappedBy = "cuentaAhorroSocio")
+	//Bien	
+	@OneToOne(cascade = CascadeType.ALL,mappedBy = "socio")
 	private CuentaAhorro socio;
 
 	@Transient

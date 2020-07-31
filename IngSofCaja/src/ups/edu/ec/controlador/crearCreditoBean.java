@@ -179,6 +179,7 @@ public class crearCreditoBean implements Serializable{
 				System.out.println("lista de coutas");
 				System.out.println(tabla+"\n");
 			}
+			listaCredito = ejbCreditoFacade.findAll();
 		 return null;		
 	}
 	

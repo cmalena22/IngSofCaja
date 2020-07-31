@@ -38,4 +38,19 @@ public class CuentaAhorroFacade extends AbstractFacade<CuentaAhorro> {
 		}
 		return cat;
 	}
+	
+	
+	public double suma() {
+		double  saldo;
+			String sql = "SELECT sum(c.saldoCuenta) FROM CuentaAhorro c";
+			System.out.println(sql);
+			Query query = em.createQuery(sql);
+			saldo = (double) query.getSingleResult();
+            System.out.println(saldo);
+		return saldo;
+	}
+
+	
+	
+
 }

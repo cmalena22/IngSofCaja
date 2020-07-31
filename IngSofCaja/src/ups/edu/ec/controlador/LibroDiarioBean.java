@@ -9,6 +9,7 @@ import javax.enterprise.context.SessionScoped;
 import javax.faces.annotation.FacesConfig;
 import javax.inject.Named;
 
+import ups.edu.ec.ejb.CuentaAhorroFacade;
 import ups.edu.ec.ejb.HistorialAhorroFacade;
 import ups.edu.ec.ejb.LibroDiarioFacade;
 import ups.edu.ec.modelos.Caja;
@@ -22,6 +23,8 @@ public class LibroDiarioBean implements Serializable{
 
 	@EJB
 	private LibroDiarioFacade ejbLibroDiario;
+	@EJB 
+	private CuentaAhorroFacade ejbCuentaFacade;
 	private List<LibroDiario>list;
 	private String fecha;
 	private String monto;
@@ -41,7 +44,7 @@ public class LibroDiarioBean implements Serializable{
 	public String add() {
 		Caja ca=new Caja();
 		ca.setId(1);
-		 ejbLibroDiario.create(new LibroDiario(this.id,"2020/07/31",ca,"1000"));
+		 ejbLibroDiario.create(new LibroDiario(this.id,"2020/07/31",ca,saldo()));
 		 list = ejbLibroDiario.findAll();
 		 return null;
 		    }
@@ -106,4 +109,10 @@ public class LibroDiarioBean implements Serializable{
 		}
 	
 	    
+		public String saldo() {
+			String saldofinal= String.valueOf(ejbCuentaFacade.suma());
+			System.out.println(saldofinal);
+			
+			return saldofinal;
+		}
 }

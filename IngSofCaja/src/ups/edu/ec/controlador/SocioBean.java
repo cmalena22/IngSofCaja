@@ -10,6 +10,7 @@ import javax.faces.annotation.FacesConfig;
 import javax.inject.Named;
 
 import ec.ups.edu.ModuloSocio.Socio;
+import ups.edu.ec.ejb.CuentaAhorroFacade;
 import ups.edu.ec.ejb.SocioFacade;
 
 @FacesConfig(version = FacesConfig.Version.JSF_2_3)
@@ -19,6 +20,8 @@ public class SocioBean implements Serializable{
 	private static final long serialVersionUID = 1L;
 	@EJB
 	private SocioFacade ejbSocioFacade;
+	@EJB
+	private CuentaAhorroFacade ejbCuentaAhorro;
 	private String nombre;
 	private String apellido;
 	private String telefono;
@@ -99,9 +102,12 @@ public class SocioBean implements Serializable{
 	System.out.println("salario"+this.salario);
 	System.out.println("perfil"+this.perfil);
 	System.out.println("trabajo"+this.trabajo);
+
+
 		ejbSocioFacade.create(new Socio(this.nombre,this.apellido,this.telefono,this.cedula,this.salario,this.perfil,this.trabajo));
 		listaSocio = ejbSocioFacade.findAll();
 		return null;
+
 		
 	}
 	

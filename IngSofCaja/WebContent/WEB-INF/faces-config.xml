@@ -81,6 +81,9 @@
 		<to-view-id>/LibroDiario.xhtml</to-view-id>
 	</navigation-case>
 </navigation-rule>
+
+
+
 <navigation-rule>
 	<display-name>LibroDiarioxhtml</display-name>
 	<from-view-id>/LibroDiario.xhtml</from-view-id>
@@ -175,6 +178,7 @@
 	<navigation-case>
 		<from-outcome>cuentaTran</from-outcome>
 		<to-view-id>/transaccion.xhtml</to-view-id>
+
 	</navigation-case>
 </navigation-rule>
 <navigation-rule>

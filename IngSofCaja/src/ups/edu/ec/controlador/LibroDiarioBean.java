@@ -9,8 +9,10 @@ import javax.enterprise.context.SessionScoped;
 import javax.faces.annotation.FacesConfig;
 import javax.inject.Named;
 
+import ups.edu.ec.ejb.HistorialAhorroFacade;
 import ups.edu.ec.ejb.LibroDiarioFacade;
 import ups.edu.ec.modelos.Caja;
+import ups.edu.ec.modelos.HistorialAhorro;
 import ups.edu.ec.modelos.LibroDiario;
 
 @FacesConfig(version = FacesConfig.Version.JSF_2_3)

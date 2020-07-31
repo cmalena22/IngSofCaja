@@ -256,4 +256,12 @@
 		<to-view-id>/crearCuenta.xhtml</to-view-id>
 	</navigation-case>
 </navigation-rule>
+<navigation-rule>
+	<display-name>crearCredito.xhtml</display-name>
+	<from-view-id>/crearCredito.xhtml</from-view-id>
+	<navigation-case>
+		<from-outcome>creditoAmort</from-outcome>
+		<to-view-id>/tablaAmortizacion.xhtml</to-view-id>
+	</navigation-case>
+</navigation-rule>
 </faces-config>

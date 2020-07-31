@@ -152,12 +152,16 @@
 				value="#{crearCreditoBean.pagoMensual}" /></li>
 		<li>Meses: <h:inputText size="10"
 				value="#{crearCreditoBean.meses}" /></li>
-				<br></br>
-	<li><h:link class="btn btn-danger btn block"  value="Crear Socio"
-						outcome="creditoSocio"></h:link></li>
+				
+					<br></br>	<br></br>
+	<li><h:link class="nav-link" value="Tabla Amortizacion"
+						outcome="creditoAmort"></h:link></li>
+			
 						<br></br>
-	<h:commandLink value="Tabla amortizacion" type="submit"
-			action="#{crearCreditoBean.add}" class="btn btn-danger btn block" />		
+	<h:commandLink value="Guardar Credito" type="submit"
+			action="#{crearCreditoBean.add}" class="btn btn-danger btn block" />	
+	<br></br>
+	
 	
 	<!-- Tabla amortizacion -->
 	

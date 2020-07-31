@@ -253,6 +253,7 @@
 	<display-name>crearCredito.xhtml</display-name>
 	<from-view-id>/crearCredito.xhtml</from-view-id>
 	<navigation-case>
+		<from-outcome>creditoCuentaaaa</from-outcome>
 		<to-view-id>/crearCuenta.xhtml</to-view-id>
 	</navigation-case>
 </navigation-rule>
@@ -260,8 +261,16 @@
 	<display-name>crearCredito.xhtml</display-name>
 	<from-view-id>/crearCredito.xhtml</from-view-id>
 	<navigation-case>
-		<from-outcome>creditoAmort</from-outcome>
+		<from-outcome>Amortizacion</from-outcome>
 		<to-view-id>/tablaAmortizacion.xhtml</to-view-id>
+	</navigation-case>
+</navigation-rule>
+<navigation-rule>
+	<display-name>tablaAmortizacion.xhtml</display-name>
+	<from-view-id>/tablaAmortizacion.xhtml</from-view-id>
+	<navigation-case>
+		<from-outcome>amorCredito</from-outcome>
+		<to-view-id>/crearCredito.xhtml</to-view-id>
 	</navigation-case>
 </navigation-rule>
 </faces-config>

@@ -74,11 +74,12 @@
 				<li><h:link class="nav-link" value="Registrar Transaccion"
 						outcome="creditoTran"></h:link></li>
 				<li><h:link class="nav-link" value="Crear Cuenta Ahorro"
-						outcome="creditoSocio"></h:link></li>
+						outcome="creditoCuentaaaa"></h:link></li>
 				<li><h:link class="nav-link" value="Crear Socio"
 						outcome="creditoSocio"></h:link></li>
 						
-						
+				<li><h:link class="nav-link" value="Tabla Amortizacion"
+						outcome="Amortizacion"></h:link></li>		
 						
 				
 			</ul>
@@ -123,8 +124,7 @@
 				<h:outputText value="#{p.bancoRecomendado}" rendered="#{not p.editable}" />
 	
 				</h:column>
-		<h:button outcome="tablaAmortizacion.xhtml?credito=#{p.id}"> Ver Tabla</h:button>		
-	
+		
 		</h:dataTable>
 		
 		<li>Nombre Recomienda: <h:inputText size="10"
@@ -153,10 +153,12 @@
 		<li>Meses: <h:inputText size="10"
 				value="#{crearCreditoBean.meses}" /></li>
 				
-					<br></br>	<br></br>
-	<li><h:link class="nav-link" value="Tabla Amortizacion"
-						outcome="creditoAmort"></h:link></li>
-			
+									<br></br>	<br></br>
+				
+				
+	
+				
+	
 						<br></br>
 	<h:commandLink value="Guardar Credito" type="submit"
 			action="#{crearCreditoBean.add}" class="btn btn-danger btn block" />	

@@ -50,9 +50,8 @@
 
 </h:head>
 <h:body>
-
-<h3 class="row justify-content-center align-items-center">Registro de Usuario</h3>
-	<header>
+<header>
+	
         <h:form>
         <nav class="navbar navbar-expand-lg navbar-light bg-light">
   <a class="navbar-brand" href="#">Usuario</a>
@@ -60,15 +59,24 @@
     <span class="navbar-toggler-icon"></span>
   </button>
 
-  <div class="collapse navbar-collapse" id="navbarSupportedContent">
-    <ul class="navbar-nav mr-auto">
-      <li class="nav-item active">
-          <a href="ParteAdministrador.xhtml">Regresar</a>
-      </li>
-    </ul>
-    </div>
-</nav>
-        </h:form>
+		<div class="collapse navbar-collapse" id="navbarSupportedContent">
+			<ul class="navbar-nav mr-auto">
+				<li class="nav-item active"><h:link class="nav-link"
+						value="Pagina Principal" outcome="socioAdm"></h:link></li>
+				<li class="nav-item"><h:link class="nav-link"
+						value="Libro Diario" outcome="socioLibro"></h:link>
+				</li>
+				<li><h:link class="nav-link" value="Registrar Transaccion"
+						outcome="socioTran"></h:link></li>
+				<li><h:link class="nav-link" value="Crear Cuenta Ahorro"
+						outcome="socioCuen"></h:link></li>
+				
+			</ul>
+			
+    
+		</div>
+		</nav>
+	</h:form>
     </header>
 	
 

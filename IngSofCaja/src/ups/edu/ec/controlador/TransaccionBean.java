@@ -157,7 +157,7 @@ public class TransaccionBean implements Serializable{
 			
 		}
 		
-		
+		listaTransaccion = ejbTransaccionFacade.findAll();
 		return null;
 		
 	}

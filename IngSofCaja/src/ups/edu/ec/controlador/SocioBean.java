@@ -102,9 +102,12 @@ public class SocioBean implements Serializable{
 	System.out.println("salario"+this.salario);
 	System.out.println("perfil"+this.perfil);
 	System.out.println("trabajo"+this.trabajo);
-	ejbSocioFacade.create(new Socio(this.nombre,this.apellido,this.telefono,this.cedula,this.salario,this.perfil,this.trabajo));
-		
-	return null;
+
+
+		ejbSocioFacade.create(new Socio(this.nombre,this.apellido,this.telefono,this.cedula,this.salario,this.perfil,this.trabajo));
+		listaSocio = ejbSocioFacade.findAll();
+		return null;
+
 		
 	}
 	

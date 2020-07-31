@@ -21,19 +21,72 @@
 	<display-name>ParteAdministrador.xhtml</display-name>
 	<from-view-id>/ParteAdministrador.xhtml</from-view-id>
 	<navigation-case>
+<<<<<<< HEAD
 		<from-outcome>ingreSocio</from-outcome>
 		<to-view-id>/crearSocio.xhtml</to-view-id>
+=======
+		<from-outcome>ingreLibrodiario</from-outcome>
+		<to-view-id>/LibroDiario.xhtml</to-view-id>
+>>>>>>> branch 'master' of https://github.com/cmalena22/IngSofCaja.git
 	</navigation-case>
 </navigation-rule>
-
 <navigation-rule>
 	<display-name>ParteAdministrador.xhtml</display-name>
 	<from-view-id>/ParteAdministrador.xhtml</from-view-id>
 	<navigation-case>
-		<from-outcome>ingreLibrodiario</from-outcome>
+		<from-outcome>admTran</from-outcome>
+		<to-view-id>/transaccion.xhtml</to-view-id>
+	</navigation-case>
+</navigation-rule>
+<navigation-rule>
+	<display-name>ParteAdministrador.xhtml</display-name>
+	<from-view-id>/ParteAdministrador.xhtml</from-view-id>
+	<navigation-case>
+		<from-outcome>admCrearCuenta</from-outcome>
+		<to-view-id>/crearCuenta.xhtml</to-view-id>
+	</navigation-case>
+</navigation-rule>
+<navigation-rule>
+	<display-name>ParteAdministrador.xhtml</display-name>
+	<from-view-id>/ParteAdministrador.xhtml</from-view-id>
+	<navigation-case>
+		<from-outcome>ingreSocio</from-outcome>
+		<to-view-id>/crearSocio.xhtml</to-view-id>
+	</navigation-case>
+</navigation-rule>
+<navigation-rule>
+	<display-name>crearSocio.xhtml</display-name>
+	<from-view-id>/crearSocio.xhtml</from-view-id>
+	<navigation-case>
+		<from-outcome>socioAdm</from-outcome>
+		<to-view-id>/ParteAdministrador.xhtml</to-view-id>
+	</navigation-case>
+</navigation-rule>
+<navigation-rule>
+	<display-name>crearSocio.xhtml</display-name>
+	<from-view-id>/crearSocio.xhtml</from-view-id>
+	<navigation-case>
+		<from-outcome>socioCuen</from-outcome>
+		<to-view-id>/crearCuenta.xhtml</to-view-id>
+	</navigation-case>
+</navigation-rule>
+<navigation-rule>
+	<display-name>crearSocio.xhtml</display-name>
+	<from-view-id>/crearSocio.xhtml</from-view-id>
+	<navigation-case>
+		<from-outcome>socioTran</from-outcome>
+		<to-view-id>/transaccion.xhtml</to-view-id>
+	</navigation-case>
+</navigation-rule>
+<navigation-rule>
+	<display-name>crearSocio.xhtml</display-name>
+	<from-view-id>/crearSocio.xhtml</from-view-id>
+	<navigation-case>
+		<from-outcome>socioLibro</from-outcome>
 		<to-view-id>/LibroDiario.xhtml</to-view-id>
 	</navigation-case>
 </navigation-rule>
+<<<<<<< HEAD
 
 <navigation-rule>
 	<display-name>ParteAdministrador.xhtml</display-name>
@@ -41,6 +94,102 @@
 	<navigation-case>
 		<from-outcome>ingreCuenta</from-outcome>
 		<to-view-id>/crearCuenta.xhtml</to-view-id>
+=======
+<navigation-rule>
+	<display-name>LibroDiarioxhtml</display-name>
+	<from-view-id>/LibroDiario.xhtml</from-view-id>
+	<navigation-case>
+		<from-outcome>libroAdm</from-outcome>
+		<to-view-id>/ParteAdministrador.xhtml</to-view-id>
+	</navigation-case>
+</navigation-rule>
+<navigation-rule>
+	<display-name>LibroDiarioxhtml</display-name>
+	<from-view-id>/LibroDiario.xhtml</from-view-id>
+	<navigation-case>
+		<from-outcome>libroTran</from-outcome>
+		<to-view-id>/transaccion.xhtml</to-view-id>
+	</navigation-case>
+</navigation-rule>
+<navigation-rule>
+	<display-name>LibroDiarioxhtml</display-name>
+	<from-view-id>/LibroDiario.xhtml</from-view-id>
+	<navigation-case>
+		<from-outcome>libroCuenta</from-outcome>
+		<to-view-id>/crearCuenta.xhtml</to-view-id>
+	</navigation-case>
+</navigation-rule>
+<navigation-rule>
+	<display-name>LibroDiarioxhtml</display-name>
+	<from-view-id>/LibroDiario.xhtml</from-view-id>
+	<navigation-case>
+		<from-outcome>libroSocio</from-outcome>
+		<to-view-id>/crearSocio.xhtml</to-view-id>
+	</navigation-case>
+</navigation-rule>
+<navigation-rule>
+	<display-name>transaccion.xhtml</display-name>
+	<from-view-id>/transaccion.xhtml</from-view-id>
+	<navigation-case>
+		<from-outcome>tranAdm</from-outcome>
+		<to-view-id>/ParteAdministrador.xhtml</to-view-id>
+	</navigation-case>
+</navigation-rule>
+<navigation-rule>
+	<display-name>transaccion.xhtml</display-name>
+	<from-view-id>/transaccion.xhtml</from-view-id>
+	<navigation-case>
+		<from-outcome>tranLibro</from-outcome>
+		<to-view-id>/LibroDiario.xhtml</to-view-id>
+	</navigation-case>
+</navigation-rule>
+<navigation-rule>
+	<display-name>transaccion.xhtml</display-name>
+	<from-view-id>/transaccion.xhtml</from-view-id>
+	<navigation-case>
+		<from-outcome>tranCuenta</from-outcome>
+		<to-view-id>/crearCuenta.xhtml</to-view-id>
+	</navigation-case>
+</navigation-rule>
+<navigation-rule>
+	<display-name>transaccion.xhtml</display-name>
+	<from-view-id>/transaccion.xhtml</from-view-id>
+	<navigation-case>
+		<from-outcome>tranSocio</from-outcome>
+		<to-view-id>/crearSocio.xhtml</to-view-id>
+	</navigation-case>
+</navigation-rule>
+<navigation-rule>
+	<display-name>crearCuenta.xhtml</display-name>
+	<from-view-id>/crearCuenta.xhtml</from-view-id>
+	<navigation-case>
+		<from-outcome>cuenAdm</from-outcome>
+		<to-view-id>/ParteAdministrador.xhtml</to-view-id>
+	</navigation-case>
+</navigation-rule>
+<navigation-rule>
+	<display-name>crearCuenta.xhtml</display-name>
+	<from-view-id>/crearCuenta.xhtml</from-view-id>
+	<navigation-case>
+		<from-outcome>cuentaLibro</from-outcome>
+		<to-view-id>/LibroDiario.xhtml</to-view-id>
+	</navigation-case>
+</navigation-rule>
+<navigation-rule>
+	<display-name>crearCuenta.xhtml</display-name>
+	<from-view-id>/crearCuenta.xhtml</from-view-id>
+	<navigation-case>
+		<from-outcome>cuentaSocio</from-outcome>
+		<to-view-id>/crearSocio.xhtml</to-view-id>
+	</navigation-case>
+</navigation-rule>
+<navigation-rule>
+	<display-name>crearCuenta.xhtml</display-name>
+	<from-view-id>/crearCuenta.xhtml</from-view-id>
+	<navigation-case>
+		<from-outcome>cuentaTran</from-outcome>
+		<to-view-id>/transaccion.xhtml</to-view-id>
+>>>>>>> branch 'master' of https://github.com/cmalena22/IngSofCaja.git
 	</navigation-case>
 </navigation-rule>
 </faces-config>

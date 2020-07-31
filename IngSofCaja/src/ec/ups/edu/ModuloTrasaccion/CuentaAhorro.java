@@ -126,9 +126,7 @@ public class CuentaAhorro implements Serializable {
 	}
 	@Override
 	public String toString() {
-		return "CuentaAhorro [id=" + id + ", numCuenta=" + numCuenta + ", saldoCuenta=" + saldoCuenta + ", capital="
-				+ capital + ", editable=" + editable + ", socio=" + socio + ", credito=" + credito
-				+ ", listaTransaccion=" + listaTransaccion + "]";
+		return numCuenta;
 	}
 	
 	

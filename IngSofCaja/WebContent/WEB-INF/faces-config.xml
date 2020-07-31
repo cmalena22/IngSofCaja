@@ -177,4 +177,83 @@
 		<to-view-id>/transaccion.xhtml</to-view-id>
 	</navigation-case>
 </navigation-rule>
+<navigation-rule>
+	<display-name>ParteAdministrador.xhtml</display-name>
+	<from-view-id>/ParteAdministrador.xhtml</from-view-id>
+	<navigation-case>
+		<from-outcome>admCredito</from-outcome>
+		<to-view-id>/crearCredito.xhtml</to-view-id>
+	</navigation-case>
+</navigation-rule>
+<navigation-rule>
+	<display-name>crearCuenta.xhtml</display-name>
+	<from-view-id>/crearCuenta.xhtml</from-view-id>
+	<navigation-case>
+		<from-outcome>cuentaCredito</from-outcome>
+		<to-view-id>/crearCredito.xhtml</to-view-id>
+	</navigation-case>
+</navigation-rule>
+<navigation-rule>
+	<display-name>LibroDiarioxhtml</display-name>
+	<from-view-id>/LibroDiario.xhtml</from-view-id>
+	<navigation-case>
+		<from-outcome>libroCredito</from-outcome>
+		<to-view-id>/crearCredito.xhtml</to-view-id>
+	</navigation-case>
+</navigation-rule>
+<navigation-rule>
+	<display-name>crearSocio.xhtml</display-name>
+	<from-view-id>/crearSocio.xhtml</from-view-id>
+	<navigation-case>
+		<from-outcome>socioCredito</from-outcome>
+		<to-view-id>/crearCredito.xhtml</to-view-id>
+	</navigation-case>
+</navigation-rule>
+<navigation-rule>
+	<display-name>transaccion.xhtml</display-name>
+	<from-view-id>/transaccion.xhtml</from-view-id>
+	<navigation-case>
+		<from-outcome>tranCredito</from-outcome>
+		<to-view-id>/crearCredito.xhtml</to-view-id>
+	</navigation-case>
+</navigation-rule>
+<navigation-rule>
+	<display-name>crearCredito.xhtml</display-name>
+	<from-view-id>/crearCredito.xhtml</from-view-id>
+	<navigation-case>
+		<from-outcome>cerditoAdm</from-outcome>
+		<to-view-id>/ParteAdministrador.xhtml</to-view-id>
+	</navigation-case>
+</navigation-rule>
+<navigation-rule>
+	<display-name>crearCredito.xhtml</display-name>
+	<from-view-id>/crearCredito.xhtml</from-view-id>
+	<navigation-case>
+		<from-outcome>creditoLibro</from-outcome>
+		<to-view-id>/LibroDiario.xhtml</to-view-id>
+	</navigation-case>
+</navigation-rule>
+<navigation-rule>
+	<display-name>crearCredito.xhtml</display-name>
+	<from-view-id>/crearCredito.xhtml</from-view-id>
+	<navigation-case>
+		<from-outcome>creditoTran</from-outcome>
+		<to-view-id>/transaccion.xhtml</to-view-id>
+	</navigation-case>
+</navigation-rule>
+<navigation-rule>
+	<display-name>crearCredito.xhtml</display-name>
+	<from-view-id>/crearCredito.xhtml</from-view-id>
+	<navigation-case>
+		<from-outcome>creditoSocio</from-outcome>
+		<to-view-id>/crearSocio.xhtml</to-view-id>
+	</navigation-case>
+</navigation-rule>
+<navigation-rule>
+	<display-name>crearCredito.xhtml</display-name>
+	<from-view-id>/crearCredito.xhtml</from-view-id>
+	<navigation-case>
+		<to-view-id>/crearCuenta.xhtml</to-view-id>
+	</navigation-case>
+</navigation-rule>
 </faces-config>

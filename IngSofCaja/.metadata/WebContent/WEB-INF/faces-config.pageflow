@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <pageflow:Pageflow xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:pageflow="http://www.sybase.com/suade/pageflow" id="pf15937504885410" configfile="/IngSofCaja/WebContent/WEB-INF/faces-config.xml">
   <nodes xsi:type="pageflow:PFPage" name="Login.xhtml" x="24" y="168" id="pf15937505624641" referenceLink="//@navigationRule.0/@navigationCase.1/@toViewId|" outlinks="pf15937505624643 pf15937506303555" inlinks="pf15937505624643" path="/Login.xhtml"/>
-  <nodes xsi:type="pageflow:PFPage" name="ParteAdministrador.xhtml" x="144" y="180" id="pf15937506303556" referenceLink="//@navigationRule.2/@fromViewId|" outlinks="pf15961337198660 pf15961640049350 pf15961641187602 pf15961645890464" inlinks="pf15937506303555 pf15961650145246 pf159616524040210 pf159616684481014 pf159616712378118" path="/ParteAdministrador.xhtml"/>
-  <nodes xsi:type="pageflow:PFPage" name="LibroDiarioxhtml" x="288" y="336" id="pf15961337198671" referenceLink="//@navigationRule.2/@navigationCase.0/@toViewId|" outlinks="pf159616524040210 pf159616524040211 pf159616524040212 pf159616524040213" inlinks="pf15961337198660 pf15961650145247 pf159616684481015 pf159616712378119" path="/LibroDiario.xhtml"/>
-  <nodes xsi:type="pageflow:PFPage" name="transaccion.xhtml" x="481" y="216" id="pf15961640049361" outlinks="pf159616684481014 pf159616684481015 pf159616684481016 pf159616684481017" inlinks="pf15961640049350 pf15961650145248 pf159616524040211 pf159616712378120" path="/transaccion.xhtml"/>
-  <nodes xsi:type="pageflow:PFPage" name="crearCuenta.xhtml" x="648" y="84" id="pf15961641187603" outlinks="pf159616712378118 pf159616712378119 pf159616712378121 pf159616712378120" inlinks="pf15961641187602 pf15961650145249 pf159616524040212 pf159616684481016" path="/crearCuenta.xhtml"/>
-  <nodes xsi:type="pageflow:PFPage" name="crearSocio.xhtml" x="372" y="-36" id="pf15961645890465" outlinks="pf15961650145246 pf15961650145249 pf15961650145248 pf15961650145247" inlinks="pf15961645890464 pf159616524040213 pf159616684481017 pf159616712378121" path="/crearSocio.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="ParteAdministrador.xhtml" x="144" y="180" id="pf15937506303556" referenceLink="//@navigationRule.2/@fromViewId|" outlinks="pf15961337198660 pf15961640049350 pf15961641187602 pf15961645890464 pf159616811772322" inlinks="pf15937506303555 pf15961650145246 pf159616524040210 pf159616684481014 pf159616712378118 pf159616846752628" path="/ParteAdministrador.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="LibroDiarioxhtml" x="288" y="336" id="pf15961337198671" referenceLink="//@navigationRule.2/@navigationCase.0/@toViewId|" outlinks="pf159616524040210 pf159616524040211 pf159616524040212 pf159616524040213 pf159616811772323" inlinks="pf15961337198660 pf15961650145247 pf159616684481015 pf159616712378119 pf159616846752629" path="/LibroDiario.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="transaccion.xhtml" x="481" y="216" id="pf15961640049361" outlinks="pf159616684481014 pf159616684481015 pf159616684481016 pf159616684481017 pf159616811772324" inlinks="pf15961640049350 pf15961650145248 pf159616524040211 pf159616712378120 pf159616846752630" path="/transaccion.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="crearCuenta.xhtml" x="648" y="84" id="pf15961641187603" outlinks="pf159616712378118 pf159616712378119 pf159616712378121 pf159616712378120 pf159616811772325" inlinks="pf15961641187602 pf15961650145249 pf159616524040212 pf159616684481016 pf159616846752631" path="/crearCuenta.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="crearSocio.xhtml" x="372" y="-36" id="pf15961645890465" outlinks="pf15961650145246 pf15961650145249 pf15961650145248 pf15961650145247 pf159616811772326" inlinks="pf15961645890464 pf159616524040213 pf159616684481017 pf159616712378121 pf159616846752632" path="/crearSocio.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="crearCredito.xhtml" x="527" y="432" id="pf159616811772327" outlinks="pf159616846752628 pf159616846752629 pf159616846752630 pf159616846752632 pf159616846752631" inlinks="pf159616811772322 pf159616811772325 pf159616811772323 pf159616811772326 pf159616811772324" path="/crearCredito.xhtml"/>
   <links id="pf15937505624643" target="pf15937505624641" source="pf15937505624641" outcome="fallo"/>
   <links id="pf15937506303555" target="pf15937506303556" source="pf15937505624641" outcome="exito"/>
   <links id="pf15961337198660" target="pf15961337198671" source="pf15937506303556" outcome="ingreLibrodiario"/>
@@ -28,4 +29,14 @@
   <links id="pf159616712378119" target="pf15961337198671" source="pf15961641187603" outcome="cuentaLibro"/>
   <links id="pf159616712378121" target="pf15961645890465" source="pf15961641187603" outcome="cuentaSocio"/>
   <links id="pf159616712378120" target="pf15961640049361" source="pf15961641187603" outcome="cuentaTran"/>
+  <links id="pf159616811772322" target="pf159616811772327" source="pf15937506303556" outcome="admCredito"/>
+  <links id="pf159616811772325" target="pf159616811772327" source="pf15961641187603" outcome="cuentaCredito"/>
+  <links id="pf159616811772323" target="pf159616811772327" source="pf15961337198671" outcome="libroCredito"/>
+  <links id="pf159616811772326" target="pf159616811772327" source="pf15961645890465" outcome="socioCredito"/>
+  <links id="pf159616811772324" target="pf159616811772327" source="pf15961640049361" outcome="tranCredito"/>
+  <links id="pf159616846752628" target="pf15937506303556" source="pf159616811772327" outcome="cerditoAdm"/>
+  <links id="pf159616846752629" target="pf15961337198671" source="pf159616811772327" outcome="creditoLibro"/>
+  <links id="pf159616846752630" target="pf15961640049361" source="pf159616811772327" outcome="creditoTran"/>
+  <links id="pf159616846752632" target="pf15961645890465" source="pf159616811772327" outcome="creditoSocio"/>
+  <links id="pf159616846752631" target="pf15961641187603" source="pf159616811772327"/>
 </pageflow:Pageflow>

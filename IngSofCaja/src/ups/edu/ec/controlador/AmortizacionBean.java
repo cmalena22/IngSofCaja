@@ -27,7 +27,7 @@ public class AmortizacionBean implements Serializable{
 	
 	private List<TablaAmortizacion>listatabla;
 	
-	
+	//
 	
 	public AmortizacionBean() {
 		super();

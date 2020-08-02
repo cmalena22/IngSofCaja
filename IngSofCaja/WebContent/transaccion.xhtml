@@ -52,8 +52,9 @@
 <h:body>
 <header>
 <div class="blockquote text-center">
-	<h1>Bienvenidos a Caja de Ahorro UPS.</h1>
+		<h1>Bienvenidos a Caja de Ahorro UPS.</h1>
 	<h1>Transaccion</h1>
+	
 	</div>
 	
 	<h:form>
@@ -127,7 +128,18 @@
 				<h:column>
 				<f:facet name="header">Cuenta</f:facet>
 				<h:outputText value="#{p.cuentaAhorro}" />
-			
+			</h:column>
+				<h:column>
+				<f:facet name="header">Eliminar</f:facet>
+				<h:commandLink value="Eliminar" action="#{transaccionBean.remove(p)}" />
+			</h:column>
+			<h:column>
+				<f:facet name="header">Editar</f:facet>
+				<h:commandLink value="Editar" action="#{transaccionBean.edit(p)}"
+					rendered="#{not p.editable}" />
+				<h:commandLink value="Save" action="#{transaccionBean.save(p)}"
+					rendered="#{ p.editable}" />
+			</h:column>
 		</h:dataTable>
 			<div class="col-lg-3">
 		Fecha: <h:inputText size="10"

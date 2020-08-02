@@ -11,7 +11,7 @@ import javax.enterprise.context.SessionScoped;
 import javax.faces.annotation.FacesConfig;
 import javax.inject.Named;
 
-
+import ec.ups.edu.ModuloSocio.Socio;
 import ec.ups.edu.ModuloTrasaccion.TablaAmortizacion;
 import ups.edu.ec.ejb.TablaAmortizacionFacade;
 @FacesConfig(version = FacesConfig.Version.JSF_2_3)
@@ -75,6 +75,22 @@ public class AmortizacionBean implements Serializable{
 		
 		System.out.println("PAgo interes"+this.tasaInteres);
 		System.out.println("PAgo mensual"+this.pagoMensual);
+		return null;
+	}
+	public String remove(TablaAmortizacion p) {
+		ejbAmortizacionFacade.remove(p);
+		listatabla = ejbAmortizacionFacade.findAll();
+		return null;
+	}
+	
+	public String edit(TablaAmortizacion p) {
+		p.setEditable(true);
+		return null;
+	}
+	
+	public String save(TablaAmortizacion p) {
+		ejbAmortizacionFacade.edit(p);
+		p.setEditable(false);
 		return null;
 	}
 

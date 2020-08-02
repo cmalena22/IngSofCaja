@@ -126,44 +126,59 @@
 				</h:column>
 		
 		</h:dataTable>
-		
-		<li>Nombre Recomienda: <h:inputText size="10"
-				value="#{crearCreditoBean.nombreRecomienda}" /></li>
-		<li>Cedula Recomienta: <h:inputText size="10"
-				value="#{crearCreditoBean.cedulaRecomienda}" /></li>
-		<li>Banco Recomienda: <h:inputText size="10"
-				value="#{crearCreditoBean.bancoRecomendado}" /></li>
-		<li>Motivo: <h:inputText size="10"
-				value="#{crearCreditoBean.motivo}" /></li>
-	
+		<div class="col-lg-3">
+		Nombre Recomienda: <h:inputText size="10"
+				value="#{crearCreditoBean.nombreRecomienda}" class="form-control"/>
+		</div>
+		<div class="col-lg-3">
+		Cedula Recomienta: <h:inputText size="10"
+			value="#{crearCreditoBean.cedulaRecomienda}" class="form-control"/>
+		</div>
+		<div class="col-lg-3">
+		Banco Recomienda: <h:inputText size="10"
+				value="#{crearCreditoBean.bancoRecomendado}" class="form-control"/>
+		</div>
+		<div class="col-lg-3">
+		Motivo: <h:inputText size="10"
+				value="#{crearCreditoBean.motivo}" class="form-control"/>
+</div>
+	<div class="col-lg-3">
 		<p>Cuenta</p>
-		<h:selectOneMenu value="#{crearCreditoBean.cuentaAhorro}" >
+		<h:selectOneMenu value="#{crearCreditoBean.cuentaAhorro}" class="form-control">
 			<f:selectItems value="#{crearCuentaBean.listaCuenta}"
 				class="form-control" />
 		</h:selectOneMenu>
 		
-	
-		
-	<li>Monto Inicial: <h:inputText size="10"
-				value="#{crearCreditoBean.montoInicial}" /></li>
-		<li>Tasa Interes: <h:inputText size="10"
-				value="#{crearCreditoBean.tasaInteres}" /></li>
-		<li>Pago Mesual: <h:outputText size="10"
-				value="#{crearCreditoBean.pagoMensual}" /></li>
-		<li>Meses: <h:inputText size="10"
-				value="#{crearCreditoBean.meses}" /></li>
+	</div>
+	<div class="col-lg-3">	
+	Monto Inicial: <h:inputText size="10"
+				value="#{crearCreditoBean.montoInicial}" class="form-control"/>
+		</div>
+		<div class="col-lg-3">
+		Tasa Interes: <h:inputText size="10"
+			value="#{crearCreditoBean.tasaInteres}" class="form-control"/>
+		</div>
+		<div class="col-lg-3">
+		Pago Mesual: <h:outputText size="10"
+				value="#{crearCreditoBean.pagoMensual}" class="form-control"/>
+	</div>
+	 <div class="col-lg-3">
+	 	Meses: <h:inputText size="10"
+				value="#{crearCreditoBean.meses}" class="form-control"/>
 				
 									<br></br>	<br></br>
-				
+		</div>	
 				
 	
 				
+	
 	
 						<br></br>
+	<div class="col-lg-3">
 	<h:commandLink value="Guardar Credito" type="submit"
 			action="#{crearCreditoBean.add}" class="btn btn-danger btn block" />	
 	<br></br>
-	
+	</div>
 	
 	<!-- Tabla amortizacion -->
 	

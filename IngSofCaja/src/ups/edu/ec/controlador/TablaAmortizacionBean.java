@@ -10,6 +10,7 @@ import javax.enterprise.context.SessionScoped;
 import javax.faces.annotation.FacesConfig;
 import javax.inject.Named;
 
+import ec.ups.edu.ModuloSocio.Socio;
 import ec.ups.edu.ModuloTrasaccion.Credito;
 import ec.ups.edu.ModuloTrasaccion.TablaAmortizacion;
 import ups.edu.ec.ejb.CreditoFacade;
@@ -76,5 +77,6 @@ public class TablaAmortizacionBean implements Serializable{
 	System.out.println(c.toString());
 		return null;
 	}
+
 	
 }

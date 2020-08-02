@@ -122,26 +122,58 @@
 				<h:inputText value="#{p.trabajo}" size="10" rendered="#{p.editable}" class="form-control" />
 				<h:outputText value="#{p.trabajo}"  size="10"  rendered="#{not p.editable}" class="form-control"/>
 			</h:column>
+		<h:column>
+				<f:facet name="header">Eliminar</f:facet>
+				<h:commandLink value="Eliminar" action="#{socioBean.remove(p)}" />
+			</h:column>
+			<h:column>
+				<f:facet name="header">Editar</f:facet>
+				<h:commandLink value="Editar" action="#{socioBean.edit(p)}"
+					rendered="#{not p.editable}" />
+				<h:commandLink value="Save" action="#{socioBean.save(p)}"
+					rendered="#{ p.editable}" />
+			</h:column>
 		</h:dataTable>
 		
-		
-		<li>Cedula: <h:inputText size="10"
-				value="#{socioBean.cedula}" /></li>
-		<li>Nombre: <h:inputText size="10"
-				value="#{socioBean.nombre}" /></li>
-		<li>Apellido: <h:inputText size="10"
-				value="#{socioBean.apellido}" /></li>
-		<li>Telefono: <h:inputText size="10"
-				value="#{socioBean.telefono}" /></li>
-		<li>Salario: <h:inputText size="10"
-				value="#{socioBean.salario}" /></li>
-		<li>Perfil: <h:inputText size="10"
-				value="#{socioBean.perfil}" /></li>
-		<li>Trabajo: <h:inputText size="10"
-				value="#{socioBean.trabajo}" /></li>
-		<h:commandLink value="submit" type="submit"
+						<br></br>
+		<div class="col-lg-3">
+		Cedula: <h:inputText size="10"
+				value="#{socioBean.cedula}"  class="form-control" />
+				<br></br>
+		</div>
+		<div class="col-lg-3">
+		Nombre: <h:inputText size="10"
+				value="#{socioBean.nombre}"  class="form-control" />
+								<br></br>
+		</div>
+		<div class="col-lg-3">		
+		Apellido: <h:inputText size="10"
+				value="#{socioBean.apellido}"  class="form-control" />
+								<br></br>
+		</div>
+		<div class="col-lg-3">		
+		Telefono: <h:inputText size="10"
+				value="#{socioBean.telefono}"  class="form-control" />
+								<br></br>
+		</div>
+		<div class="col-lg-3">		
+		Salario: <h:inputText size="10"
+				value="#{socioBean.salario}"  class="form-control" />
+								<br></br>
+		</div>
+		<div class="col-lg-3">		
+		Perfil: <h:inputText size="10"
+				value="#{socioBean.perfil}"  class="form-control" />				<br></br>
+		</div>
+		<div class="col-lg-3">		
+		Trabajo: <h:inputText size="10"
+				value="#{socioBean.trabajo}"  class="form-control" />				<br></br>
+		</div>
+	<div class="col-lg-3">	
+		<h:commandLink value="Guarda socio" type="submit"
 			action="#{socioBean.add}" class="btn btn-danger btn block" />
-
+			</div>
+			
 	</h:form>
 
 

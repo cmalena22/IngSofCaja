@@ -111,6 +111,22 @@ public class SocioBean implements Serializable{
 		
 	}
 	
+
+	public String remove(Socio p) {
+		ejbSocioFacade.remove(p);
+		listaSocio = ejbSocioFacade.findAll();
+		return null;
+	}
 	
+	public String edit(Socio p) {
+		p.setEditable(true);
+		return null;
+	}
+	
+	public String save(Socio p) {
+		ejbSocioFacade.edit(p);
+		p.setEditable(false);
+		return null;
+	}
 	
 }

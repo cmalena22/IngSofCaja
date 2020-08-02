@@ -69,6 +69,11 @@
 				<f:facet name="header">Pago Mensual</f:facet>
 				<h:outputText value="#{p.pagoMensual}" rendered="#{not p.editable}" />
 			</h:column>
+	
+				<h:column>
+				<f:facet name="header">Eliminar</f:facet>
+				<h:commandLink value="Eliminar" action="#{amortizacionBean.remove(p)}" />
+			</h:column>
 			
 		</h:dataTable>
 	

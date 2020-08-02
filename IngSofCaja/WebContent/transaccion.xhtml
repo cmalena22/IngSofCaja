@@ -124,28 +124,35 @@
 				<h:column>
 				<f:facet name="header">Cuenta</f:facet>
 				<h:outputText value="#{p.cuentaAhorro}" />
-			</h:column>
+			
 		</h:dataTable>
-		
-		<li>Fecha: <h:inputText size="10"
-				value="#{transaccionBean.fecha}" /></li>
-		<li>Monto: <h:inputText size="10"
-				value="#{transaccionBean.monto}" /></li>
-		<li>Direccion: <h:inputText size="10"
-				value="#{transaccionBean.direccion}" /></li>
-		<li>Tipo Transaccion: 
-		<h:selectOneMenu  value="#{transaccionBean.tipoTransaccion}">
-				<f:selectItem itemValue="Deposito" itemLabel="Deposito" />
-				<f:selectItem itemValue="Retiro" itemLabel="Retiro" />
+			<div class="col-lg-3">
+		Fecha: <h:inputText size="10"
+				value="#{transaccionBean.fecha}" class="form-control"/></div>
+			<div class="col-lg-3">
+		Monto: <h:inputText size="10"
+				value="#{transaccionBean.monto}" class="form-control"/></div>
+			<div class="col-lg-3">
+		Direccion: <h:inputText size="10"
+				value="#{transaccionBean.direccion}" class="form-control"/></div>
+			<div class="col-lg-3">
+		Tipo Transaccion: 
+		<h:selectOneMenu  value="#{transaccionBean.tipoTransaccion}" class="form-control">
+				<f:selectItem itemValue="Deposito" itemLabel="Deposito" class="form-control"/>
+				<f:selectItem itemValue="Retiro" itemLabel="Retiro" class="form-control"/>
 				
 			</h:selectOneMenu >		
-			</li>
+		</div>
+			<div class="col-lg-3">
 		<p>Numero de Cuenta</p>
-		<h:selectOneMenu value="#{transaccionBean.cuentaAhorro}" >
+		<h:selectOneMenu value="#{transaccionBean.cuentaAhorro}" class="form-control">
 			<f:selectItems value="#{crearCuentaBean.listaCuenta}" class="form-control" />
 		</h:selectOneMenu>
+		</div>
+		<div class="col-lg-3">
 		<h:commandLink value="submit" type="submit"
 			action="#{transaccionBean.add()}" class="btn btn-danger btn block" />
+		</div>
 	</h:form>
 </h:body>
 </html>

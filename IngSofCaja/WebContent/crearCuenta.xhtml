@@ -101,20 +101,25 @@
 			</h:column>
 			
 		</h:dataTable>
+		<div class="col-lg-3">	
+		Numero Cuenta: <h:inputText size="10"
+				value="#{crearCuentaBean.numCuenta}"   class="form-control"/></div>
+		<div class="col-lg-3">
+		Saldo Cuenta: <h:inputText size="10"
+				value="#{crearCuentaBean.saldoCuenta}"  class="form-control"/></div>
+		<div class="col-lg-3">
+		Capital: <h:inputText size="10" 	value="#{crearCuentaBean.capital}"   class="form-control"/>	</div>	
 		
-		<li>Numero Cuenta: <h:inputText size="10"
-				value="#{crearCuentaBean.numCuenta}" /></li>
-		<li>Saldo Cuenta: <h:inputText size="10"
-				value="#{crearCuentaBean.saldoCuenta}" /></li>
-		<li>Capital: <h:inputText size="10" 	value="#{crearCuentaBean.capital}" /></li>		
+		<div class="col-lg-3">
 		<p>Socio</p>
-		<h:selectOneMenu value="#{crearCuentaBean.socio}" >
+		<h:selectOneMenu value="#{crearCuentaBean.socio}" class="form-control">
 			<f:selectItems value="#{socioBean.listaSocio}" class="form-control" />
 		</h:selectOneMenu>
-		
+		</div>
+		<div class="col-lg-3">
 		<h:commandLink value="submit" type="submit"
 			action="#{crearCuentaBean.add}" class="btn btn-danger btn block" />
-
+	</div>
 	</h:form>
 
 
